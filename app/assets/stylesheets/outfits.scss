@@ -3,55 +3,88 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .header{
-  height: 220px;
+  height: 180px;
   width: 100vw;
-  background-color: yellow;
+  border-bottom: 1px solid;
   &__profile{
-    height: 200px;
+    height: 180px;
     width: 150px;
-    background-color: red;
+    padding-top: 30px;
+    padding-left: 25px;
     margin: 0 auto;
+    &__user-image{
+      height: 100px;
+      width: 100px;
+      border-radius: 50px;
+      margin-bottom: 20px;
+    }
+    &__user-name{
+      font-weight: bold;
+      padding-left: 24px;
+    }
   }
 }
 .main{
   width: 100vw;
   &__upper{
-    height: 250px;
-    width: 100%;
-    background-color: skyblue;
+    
     &__actions{
-      width: 80%;
-      margin: 0 auto;
+      height: 130px;
+      width: 100%;
+      padding: 35px 100px;
       display: flex;
+      justify-content: space-between;
       &__category{
         border: 1px solid;
+        height: 22px;
+        margin-left: 60px;
       }
       &__decide{
         border: 1px solid;
+        font-size: 30px;
+        margin-left: 40px;
       }
       &__add{
         border: 1px solid;
+        height: 22px;
       }
     }
   }
   &__lower{
     width: 100%;
-    background-color: blue;
     &__title{
       font-size: 30px;
+      padding-left: 50px;
+      padding-bottom: 20px;
     }
     &__outfit-list{
       display: flex;
-      justify-content: space-evenly;
+      justify-content: space-around;
+      margin: 0 auto;
+      margin-bottom: 20px;
+      width: 80%;
       &__outfit{
-        height: 200px;
+        height: 220px;
         width: 150px;
+        padding: 15px;
+        display: inline-block;
+        border: 1px solid;
+        &__image{
+          height: 150px;
+          width: 120px;
+          
+        }
       }
     }
   }
 }
 .footer{
-  height: 100px;
+  height: 50px;
   width: 100vw;
   background-color: green;
+  &__content{
+    line-height: 50px;
+    margin: 0 auto;
+    text-align: center;
+  }
 }
