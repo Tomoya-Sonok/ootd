@@ -1,3 +1,57 @@
 // Place all the styles related to the outfits controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.header{
+  height: 220px;
+  width: 100vw;
+  background-color: yellow;
+  &__profile{
+    height: 200px;
+    width: 150px;
+    background-color: red;
+    margin: 0 auto;
+  }
+}
+.main{
+  width: 100vw;
+  &__upper{
+    height: 250px;
+    width: 100%;
+    background-color: skyblue;
+    &__actions{
+      width: 80%;
+      margin: 0 auto;
+      display: flex;
+      &__category{
+        border: 1px solid;
+      }
+      &__decide{
+        border: 1px solid;
+      }
+      &__add{
+        border: 1px solid;
+      }
+    }
+  }
+  &__lower{
+    width: 100%;
+    background-color: blue;
+    &__title{
+      font-size: 30px;
+    }
+    &__outfit-list{
+      display: flex;
+      justify-content: space-evenly;
+      &__outfit{
+        height: 200px;
+        width: 150px;
+      }
+    }
+  }
+}
+.footer{
+  height: 100px;
+  width: 100vw;
+  background-color: green;
+}
