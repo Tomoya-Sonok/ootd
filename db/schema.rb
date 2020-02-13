@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2020_02_12_124807) do
 
-  create_table "outfits", force: :cascade do |t|
+  create_table "outfits", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.string "image_id"
     t.integer "user_id"
@@ -20,14 +20,14 @@ ActiveRecord::Schema.define(version: 2020_02_12_124807) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "outfits_tags", force: :cascade do |t|
+  create_table "outfits_tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "outfit_id"
     t.integer "tag_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "tags", force: :cascade do |t|
+  create_table "tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
