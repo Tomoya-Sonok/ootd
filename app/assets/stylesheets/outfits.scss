@@ -29,12 +29,43 @@
   width: 100vw;
   &__upper{
     background-color: whitesmoke;
+    &__title{
+      font-size: 30px;
+      padding-left: 50px;
+      padding-bottom: 20px;
+      padding-top: 20px;
+    }
+    &__cover{
+      height: 700px;
+      width: 700px;
+      padding-left: 145px;
+      margin: 0 auto;
+      #flexbox{
+        display: flex;
+      }
+      #outfit-image{
+        height: 400px;
+        width: 400px;
+      }
+      #add-message{
+        padding-left: 55px;
+        padding-right: 5px;
+        padding-top: 18px;    
+      }
+      #add-outfit{
+        // background-size: cover;
+        .fa{
+          height: 50px;
+          width: 50px;
+        }
+      }
+    }
     &__actions{
       height: 130px;
       width: 100%;
       padding: 35px 100px;
       display: flex;
-      justify-content: space-between;
+      justify-content: space-evenly;
       &__category{
         border: 1px solid;
         height: 22px;

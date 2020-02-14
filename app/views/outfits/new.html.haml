@@ -1,0 +1,62 @@
+.header
+  .header__profile
+    = image_tag  "man.jpg", class: "header__profile__user-image"
+    .header__profile__user-name
+      テスト君
+.main
+  .main__upper
+    .main__upper__title
+      コーデの追加
+    .main__upper__cover
+      = form_for [@outfit] do |f|
+        .row
+          = image_tag "clothes.jpg", id: "outfit-image"
+          -# <%= image_tag @outfit.img.url if @outfit.img? %>
+          .col-md
+            %form
+              .form-group#flexbox
+                %p#add-message
+                  右のボタンを押して写真を追加しましょう
+                %label#add-outfit
+                  %span.btn
+                    
+                    -# = image_tag @outfit.image.url
+                    = icon('fa fa-3x','image')
+                    = f.file_field :image, style: 'display:none'
+        .row
+          .col-md
+            %form
+              .form-group
+                %label.col-md-4
+                  カテゴリー
+                  .input-group
+                    .input-group-btn
+                      %button.btn.btn-default.dropdown-toggle{"data-toggle" => "dropdown", type: "button"}
+                        カテゴリーを選択してください
+                        %span.caret
+                      %ul.dropdown-menu.pull-right
+                        %li
+                          カテゴリー1
+                        %li
+                          カテゴリー2
+                        %li
+                          カテゴリー3
+                        %li
+                          カテゴリー4
+        .row
+          .col-md              
+            %form
+              .form-group
+                %label.col-md-4
+                  コーデ名
+                  %input.form-control
+        .row
+          .col-md
+            %form
+              .form-group
+                %label.col-md-4
+                  %button.btn.btn-primary{type: "submit"}
+                    追加する
+.footer
+  .footer__content
+    ©︎ 2020 OOTD by Tomoya Sonokui
