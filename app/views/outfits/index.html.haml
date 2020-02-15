@@ -11,8 +11,7 @@
         -# カテゴリー追加のボタンも後々作る予定
       .main__upper__actions__decide
         今日のコーデを決める！
-      .main__upper__actions__add
-        コーデを追加
+      = link_to "コーデを追加", new_outfit_path, class: "main__upper__actions__add"
   .main__lower
     .main__lower__title
       コーデ一覧
