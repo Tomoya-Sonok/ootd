@@ -74,7 +74,8 @@
       &__decide{
         border: 1px solid;
         font-size: 30px;
-        margin-left: 40px;
+        padding: 10px 0 0 10px;
+        margin-right: 60px;
       }
       &__add{
         border: 1px solid;
@@ -85,6 +86,7 @@
   }
   &__lower{
     width: 100%;
+    background-color: white;
     &__title{
       font-size: 30px;
       padding-left: 50px;
