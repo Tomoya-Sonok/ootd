@@ -5,7 +5,7 @@
         「毎日の服選びが面倒なあなたに。」
   .col-md-4
     %h2.title 新規登録
-    = form_for(resource, class: "form-group",as: resource_name, url: registration_path(resource_name)) do |f|
+    = form_for(resource, class: "form-group", as: resource_name, url: registration_path(resource_name)) do |f|
       = render "devise/shared/error_messages", resource: resource
       #new_user__field-content
         = f.label :username
@@ -35,7 +35,7 @@
         = f.label :password_confirmation
         %br/
         = f.password_field :password_confirmation, autocomplete: "new-password"
-      .btns 
+      #new_user__btns 
         = f.submit "アカウント作成", class:"btn btn-success"
         .btn.btn-primary
           = render "devise/shared/links"
