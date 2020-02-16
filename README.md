@@ -36,8 +36,8 @@
 ## userテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
-|age|integer|null: false|
+|username|string|null: false|
+|age|smallint|null: false|
 |gender|integer|null: false|
 |password|string|null: false|
 

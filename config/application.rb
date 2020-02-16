@@ -10,6 +10,8 @@ module Ootd
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
+    config.i18n.default_locale = :ja
+    # 日本語のメッセージを変更したければconfig/locales/devise.views.ja.ymlを編集
     config.autoload_paths += Dir[Rails.root.join('app', 'uploaders')]
 
     # Settings in config/environments/* take precedence over those specified here.

@@ -1,0 +1,41 @@
+.container
+  .col-md-8
+    .message-box
+      %h1.message
+        「毎日の服選びが面倒なあなたに。」
+  .col-md-4
+    %h2.title 新規登録
+    = form_for(resource, class: "form-group", as: resource_name, url: registration_path(resource_name)) do |f|
+      = render "devise/shared/error_messages", resource: resource
+      #new_user__field-content
+        = f.label :username
+        %br/
+        = f.text_field :username
+      #new_user__field-content
+        = f.label '年齢'
+        %br/
+        = f.text_field :age
+      #new_user__field-content
+        = f.label '性別'
+        %br/
+        = f.label '男性'
+        = f.radio_button :gender, :man
+        = f.label '女性'
+        = f.radio_button :gender, :woman
+        = f.label '回答しない'
+        = f.radio_button :gender, :neutral
+      #new_user__field-content
+        = f.label :password
+        - if @minimum_password_length
+          %em
+            (#{@minimum_password_length}文字以上)
+        %br/
+        = f.password_field :password, autocomplete: "new-password"
+      #new_user__field-content
+        = f.label :password_confirmation
+        %br/
+        = f.password_field :password_confirmation, autocomplete: "new-password"
+      #new_user__btns 
+        = f.submit "アカウント作成", class:"btn btn-success"
+        .btn.btn-primary
+          = render "devise/shared/links"

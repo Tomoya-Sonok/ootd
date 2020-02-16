@@ -17,6 +17,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "outfits";
+@import "users";
 
 a{
   text-decoration: none;
@@ -27,3 +28,27 @@ a:link, a:visited, a:hover, a:active{
   text-decoration: none;
   color: inherit;
 }
+
+.notice{
+  height: 20px;
+  margin: 0;
+  background-color: yellowgreen;
+  color: red;
+}
+.alert{
+  height: 20px;
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+  background-color: yellowgreen;
+  color: red;
+}
+
+.signout-btn{
+  height: 20px;
+  margin: 0;
+  padding: 10px;
+  border-radius: 0;
+  background-color: yellowgreen;
+}
+// ログアウトボタンはのちに編集予定
