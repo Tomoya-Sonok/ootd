@@ -5,6 +5,8 @@ class User < ApplicationRecord
   validates :password_confirmation, presence: true
 
   enum gender: { man: 0, woman: 1, neutral: 2}
+
+  has_many :outfits
   
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable

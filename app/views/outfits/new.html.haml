@@ -2,58 +2,37 @@
   .header__profile
     = image_tag  "man.jpg", class: "header__profile__user-image"
     .header__profile__user-name
-      テスト君
+      = current_user.username
 .main
   .main__upper
     .main__upper__title
       コーデの追加
     .main__upper__cover
-      = form_for [@outfit] do |f|
+      = form_with model: @outfit, local: true do |f|
         .row
           = image_tag "clothes.jpg", id: "outfit-image"
-          -# <%= image_tag @outfit.img.url if @outfit.img? %>
+          -# プレビュー機能用メモ　= image_tag @outfit.image if @outfit.image?, id: "outfit-image"
           .col-md
-            %form
-              .form-group#flexbox
-                %p#add-message
-                  右のボタンを押して写真を追加しましょう
-                %label#add-outfit
-                  %span.btn
-                    
-                    -# = image_tag @outfit.image.url
-                    = icon('fa fa-3x','image')
-                    = f.file_field :image, style: 'display:none'
+            .form-group#flexbox
+              %p#add-message
+                右のボタンを押して写真を追加しましょう
+              %label#add-outfit
+                %span.btn
+                  = icon('fa fa-3x','image')
+                  = f.file_field :image, style: 'display:none'
         .row
           .col-md
-            %form
-              .form-group
-                %label.col-md-4
-                  カテゴリー
-                  .input-group
-                    .input-group-btn
-                      %button.btn.btn-default.dropdown-toggle{"data-toggle" => "dropdown", type: "button"}
-                        カテゴリーを選択してください
-                        %span.caret
-                      %ul.dropdown-menu.pull-right
-                        %li
-                          カテゴリー1
-                        %li
-                          カテゴリー2
-                        %li
-                          カテゴリー3
-                        %li
-                          カテゴリー4
-        .row
-          .col-md              
-            %form
-              .form-group
-                %label.col-md-4
-                  コーデ名
-                  %input.form-control
+            .form-group
+              = f.label "コーデ名", id: 'outfit-name' 
+              = f.text_field :name, class: 'form_control'
         .row
           .col-md
-            %form
-              .form-group
-                %label.col-md-4
-                  %button.btn.btn-success{type: "submit"}
-                    追加する
+            .form-group
+              = f.fields_for @tag do |t|
+                = t.label "カテゴリー", class: 'col-md'
+                = t.collection_select :tagname, Tag.all, :id, :tagname, include_blank: true, class: 'input-group' 
+        .row
+          .col-md
+            .form-group
+              = f.label "", class: 'col-md-4' do
+                = f.submit '追加する', class: 'btn btn-success'
