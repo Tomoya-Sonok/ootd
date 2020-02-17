@@ -1,18 +1,24 @@
 .container
-  %h2 ログイン
-  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-    .field
-      = f.label :username
-      %br/
-      = f.text_field :username
-    .field
-      = f.label :password
-      %br/
-      = f.password_field :password, autocomplete: "current-password"
-    - if devise_mapping.rememberable?
-      .field
-        = f.check_box :remember_me
-        = f.label :remember_me
-    .actions
-      = f.submit "ログイン"
-  = render "devise/shared/links"
+  .col-md-8
+    .message-box.for-login
+      %h1.message
+        「毎日の服選びが面倒なあなたに。」
+  .col-md-4
+    %h2.title ログイン
+    = form_for(resource, class: "form-group", as: resource_name, url: session_path(resource_name)) do |f|
+      #new_user__field-content
+        = f.label :username
+        %br/
+        = f.text_field :username
+      #new_user__field-content
+        = f.label :password
+        %br/
+        = f.password_field :password, autocomplete: "current-password"
+      - if devise_mapping.rememberable?
+        #new_user__field-content
+          = f.check_box :remember_me
+          = f.label :remember_me
+      #new_user__btns
+        = f.submit "ログイン", class: "btn btn-primary"
+        .btn.btn-success
+          = render "devise/shared/links"

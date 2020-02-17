@@ -65,11 +65,6 @@
       padding: 35px 100px;
       display: flex;
       justify-content: space-evenly;
-      &__category{
-        border: 1px solid;
-        height: 22px;
-        margin-left: 60px;
-      }
       &__decide{
         border: 1px solid;
         font-size: 30px;
@@ -95,7 +90,7 @@
       display: flex;
       justify-content: space-around;
       margin: 0 auto;
-      margin-bottom: 20px;
+      padding-bottom: 20px;
       width: 80%;
       &__outfit{
         height: 220px;
@@ -106,19 +101,8 @@
         &__image{
           height: 150px;
           width: 120px;
-          
         }
       }
     }
-  }
-}
-.footer{
-  height: 50px;
-  width: 100vw;
-  background-color: green;
-  &__content{
-    line-height: 50px;
-    margin: 0 auto;
-    text-align: center;
   }
 }

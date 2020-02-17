@@ -19,6 +19,13 @@
 @import "outfits";
 @import "users";
 
+body{
+  background-image: url("/images/test-background.jpg");
+  background-size: cover;
+  position: relative;
+  padding-bottom: 50px;
+}
+
 a{
   text-decoration: none;
   color: inherit;
@@ -35,6 +42,12 @@ a:link, a:visited, a:hover, a:active{
   background-color: yellowgreen;
   color: red;
 }
+
+header{
+  background-color: yellowgreen;
+  width: 100vw;
+  height: 40px;
+}
 .alert{
   height: 20px;
   margin: 0;
@@ -50,5 +63,22 @@ a:link, a:visited, a:hover, a:active{
   padding: 10px;
   border-radius: 0;
   background-color: yellowgreen;
+  position: absolute;
+  right: 20px;
 }
 // ログアウトボタンはのちに編集予定
+// 編集ボタンを横に配置する
+
+
+footer{
+  height: 50px;
+  width: 100vw;
+  background-color: green;
+  position: absolute;
+  bottom: 0;
+  .content{
+    line-height: 50px;
+    margin: 0 auto;
+    text-align: center;
+  }
+}
