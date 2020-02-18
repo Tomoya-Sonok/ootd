@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     registrations: 'users/registrations',
     sessions: 'users/sessions'
   }
-  resources :outfits, only:[:index, :new, :show, :edit]
+  resources :outfits
   root 'outfits#index'
 
   devise_scope :user do

@@ -3,11 +3,12 @@ class OutfitsController < ApplicationController
   
   def index
     @outfits = Outfit.all
+    # @tags = Tag.all
   end
 
   def new
     @outfit = Outfit.new
-    
+    @outfit.tags.build
   end
 
   def show
@@ -17,13 +18,14 @@ class OutfitsController < ApplicationController
   end
 
   def create
-    @outfit = Outfit.find(outfit_params)
+    @outfit = Outfit.create(outfit_params)
     @outfit.save
+
     redirect_to outfits_path
   end
 
   private
-  def outfit_params
-    params.require(:outfit).permit(:name, :image, :user_id)
+    def outfit_params
+      params.require(:outfit).permit(:name, :image, tags_attributes:[:tagname]).merge(user_id: current_user.id)
+    end
   end
-end

@@ -10,25 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_15_132215) do
+ActiveRecord::Schema.define(version: 2020_02_18_024323) do
 
   create_table "outfits", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
-    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "image"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_outfits_on_user_id"
   end
 
   create_table "outfits_tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "outfit_id"
-    t.integer "tag_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "outfit_id"
+    t.bigint "tag_id"
+    t.index ["outfit_id"], name: "index_outfits_tags_on_outfit_id"
+    t.index ["tag_id"], name: "index_outfits_tags_on_tag_id"
   end
 
   create_table "tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
+    t.string "tagname"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -48,4 +51,7 @@ ActiveRecord::Schema.define(version: 2020_02_15_132215) do
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
+  add_foreign_key "outfits", "users"
+  add_foreign_key "outfits_tags", "outfits"
+  add_foreign_key "outfits_tags", "tags"
 end
