@@ -30,7 +30,7 @@
             .form-group
               = f.fields_for @tag do |t|
                 = t.label "カテゴリー", class: 'col-md'
-                = t.collection_select :tagname, Tag.all, :id, :tagname, include_blank: true, class: 'input-group' 
+                = t.collection_select :tagname, Tag.all, :tagname, :tagname, include_blank: "カテゴリーを選択してください", class: 'input-group' 
         .row
           .col-md
             .form-group
