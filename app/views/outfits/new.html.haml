@@ -8,7 +8,7 @@
     .main__upper__title
       コーデの追加
     .main__upper__cover
-      = form_with model: @outfit, local: true do |f|
+      = nested_form_for @outfit do |f|
         .row
           = image_tag "clothes.jpg", id: "outfit-image"
           -# プレビュー機能用メモ　= image_tag @outfit.image if @outfit.image?, id: "outfit-image"
@@ -28,7 +28,7 @@
         .row
           .col-md
             .form-group
-              = f.fields_for @tag do |t|
+              = f.fields_for :tags do |t|
                 = t.label "カテゴリー", class: 'col-md'
                 = t.collection_select :tagname, Tag.all, :tagname, :tagname, include_blank: "カテゴリーを選択してください", class: 'input-group' 
         .row
