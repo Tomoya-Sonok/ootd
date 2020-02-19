@@ -26,11 +26,11 @@
         コーデ一覧
       #outfit-list
         - @outfits.each do |outfit|
-          -# この下のタグにlink_toでoutfits#showにとぶリンク貼る
-          .col-md-4#a-outfit
-            = image_tag outfit.image.to_s, id: "outfit-image"
-            #outfit-tag
-              - outfit.tags.each do |tag|
-                = tag.tagname
-            #outfit-name
-              = outfit.name
+          = link_to outfit_path(outfit) do
+            .col-md-4#a-outfit
+              = image_tag outfit.image.to_s, id: "outfit-image"
+              #outfit-tag
+                - outfit.tags.each do |tag|
+                  = tag.tagname
+              #outfit-name
+                = outfit.name

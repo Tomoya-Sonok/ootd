@@ -2,6 +2,18 @@
 .container{
   padding-top: 50px;
   padding-bottom: 200px;
+  .backward{
+    display: flex;
+    border: 2px solid;
+    border-radius: 16px;
+    .back-icon{
+      padding-left: 4px;
+    }
+    .backward-btn{
+      padding-top: 4px;
+      padding-left: 4px;
+    }
+  }
   .col-md-8{
     height: 400px;
     margin-top: 35px;
