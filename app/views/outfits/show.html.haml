@@ -19,6 +19,6 @@
         = @outfit.name
       #btns
         .btn.btn-warning
-          = link_to '編集する', edit_outfit_path, method: :get
+          = link_to '編集する', edit_outfit_path(@outfit), method: :get
         .btn.btn-danger
           = link_to '削除する', "/outfits/#{@outfit.id}", method: :delete
