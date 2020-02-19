@@ -61,7 +61,7 @@
       #outfit-name{
         margin-right: 140px;
       }
-      #outfit_tag_id{
+      #outfit_tags_attributes_0_tagname{
         width: 50%;
       }
     }
@@ -89,25 +89,27 @@
     background-color: white;
     &__title{
       font-size: 30px;
-      padding-left: 50px;
       padding-bottom: 20px;
     }
-    &__outfit-list{
-      display: flex;
-      justify-content: space-around;
+    #outfit-list{
       margin: 0 auto;
-      padding-bottom: 20px;
-      width: 80%;
-      &__outfit{
-        height: 220px;
-        width: 150px;
-        padding: 15px;
-        display: inline-block;
-        border: 1px solid;
-        &__image{
-          height: 150px;
-          width: 120px;
-        }
+      #a-outfit{
+      height: 260px;
+      width: 200px;
+      padding: 20px;
+      margin: 30px;
+      display: inline-block;
+      border: 1px solid;
+      #outfit-image{
+      height: 180px;
+      width: 160px;
+      }
+      #outfit-tag{
+        margin-top: 5px;
+      }
+      #outfit-name{
+        margin-top: 5px;
+      }
       }
     }
   }

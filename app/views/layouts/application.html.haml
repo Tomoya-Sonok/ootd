@@ -19,7 +19,12 @@
         .signout-btn
           = link_to "ログアウト", users_sign_out_path, method: :delete
           = link_to "アカウントの編集", edit_user_registration_path
-
+    .header
+      - if current_user
+        .header__profile
+          =image_tag  "man.jpg", class: "header__profile__user-image"
+          .header__profile__user-name
+            = current_user.username
     = yield
     %footer
       .content

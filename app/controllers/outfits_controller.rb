@@ -2,8 +2,7 @@ class OutfitsController < ApplicationController
   before_action :authenticate_user!
   
   def index
-    @outfits = Outfit.all
-    # @tags = Tag.all
+    @outfits = current_user.outfits
   end
 
   def new

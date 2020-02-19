@@ -1,9 +1,3 @@
-.header
-  - if current_user
-    .header__profile
-      =image_tag  "man.jpg", class: "header__profile__user-image"
-      .header__profile__user-name
-        = current_user.username
 .main
   .main__upper
     .main__upper__actions
@@ -27,55 +21,15 @@
         今日のコーデを決める！
       = link_to "コーデを追加", new_outfit_path, class: "main__upper__actions__add"
   .main__lower
-    .main__lower__title
-      コーデ一覧
-    .main__lower__outfit-list
-      .main__lower__outfit-list__outfit
-        =image_tag  "woman.jpg", class: "main__lower__outfit-list__outfit__image"
-        .main__lower__outfit-list__outfit__category-name
-          カテゴリー1
-        .main__lower__outfit-list__outfit__name
-          テストコーデ
-      .main__lower__outfit-list__outfit
-        =image_tag  "woman.jpg", class: "main__lower__outfit-list__outfit__image"
-        .main__lower__outfit-list__outfit__category-name
-          カテゴリー1
-        .main__lower__outfit-list__outfit__name
-          テストコーデ
-      .main__lower__outfit-list__outfit
-        =image_tag  "woman.jpg", class: "main__lower__outfit-list__outfit__image"
-        .main__lower__outfit-list__outfit__category-name
-          カテゴリー1
-        .main__lower__outfit-list__outfit__name
-          テストコーデ
-      .main__lower__outfit-list__outfit
-        =image_tag  "woman.jpg", class: "main__lower__outfit-list__outfit__image"
-        .main__lower__outfit-list__outfit__category-name
-          カテゴリー1
-        .main__lower__outfit-list__outfit__name
-          テストコーデ
-    .main__lower__outfit-list
-      .main__lower__outfit-list__outfit
-        =image_tag  "woman.jpg", class: "main__lower__outfit-list__outfit__image"
-        .main__lower__outfit-list__outfit__category-name
-          カテゴリー1
-        .main__lower__outfit-list__outfit__name
-          テストコーデ
-      .main__lower__outfit-list__outfit
-        =image_tag  "woman.jpg", class: "main__lower__outfit-list__outfit__image"
-        .main__lower__outfit-list__outfit__category-name
-          カテゴリー1
-        .main__lower__outfit-list__outfit__name
-          テストコーデ
-      .main__lower__outfit-list__outfit
-        =image_tag  "woman.jpg", class: "main__lower__outfit-list__outfit__image"
-        .main__lower__outfit-list__outfit__category-name
-          カテゴリー1
-        .main__lower__outfit-list__outfit__name
-          テストコーデ
-      .main__lower__outfit-list__outfit
-        =image_tag  "woman.jpg", class: "main__lower__outfit-list__outfit__image"
-        .main__lower__outfit-list__outfit__category-name
-          カテゴリー1
-        .main__lower__outfit-list__outfit__name
-          テストコーデ
+    .container
+      .main__lower__title
+        コーデ一覧
+      #outfit-list
+        - @outfits.each do |outfit|
+          .col-md-4#a-outfit
+            = image_tag outfit.image.to_s, id: "outfit-image"
+            #outfit-tag
+              - outfit.tags.each do |tag|
+                = tag.tagname
+            #outfit-name
+              = outfit.name
