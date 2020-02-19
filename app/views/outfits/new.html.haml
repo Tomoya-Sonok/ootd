@@ -1,38 +1,34 @@
-.header
-  .header__profile
-    = image_tag  "man.jpg", class: "header__profile__user-image"
-    .header__profile__user-name
-      = current_user.username
 .main
   .main__upper
-    .main__upper__title
-      コーデの追加
-    .main__upper__cover
-      = nested_form_for @outfit do |f|
-        .row
-          = image_tag "clothes.jpg", id: "outfit-image"
-          -# プレビュー機能用メモ　= image_tag @outfit.image if @outfit.image?, id: "outfit-image"
-          .col-md
-            .form-group#flexbox
-              %p#add-message
-                右のボタンを押して写真を追加しましょう
-              %label#add-outfit
-                %span.btn
-                  = icon('fa fa-3x','image')
-                  = f.file_field :image, style: 'display:none'
-        .row
-          .col-md
-            .form-group
-              = f.label "コーデ名", id: 'outfit-name' 
-              = f.text_field :name, class: 'form_control'
-        .row
-          .col-md
-            .form-group
-              = f.fields_for :tags do |t|
-                = t.label "カテゴリー", class: 'col-md'
-                = t.collection_select :tagname, Tag.all, :tagname, :tagname, include_blank: "カテゴリーを選択してください", class: 'input-group' 
-        .row
-          .col-md
-            .form-group
-              = f.label "", class: 'col-md-4' do
-                = f.submit '追加する', class: 'btn btn-success'
+    .container
+      .main__upper__title
+        コーデの追加
+      .main__upper__cover
+        = nested_form_for @outfit do |f|
+          .row
+            = image_tag "clothes.jpg", id: "outfit-image"
+            -# プレビュー機能用メモ　= image_tag @outfit.image if @outfit.image?, id: "outfit-image"
+            .col-md
+              .form-group#flexbox
+                %p#add-message
+                  右のボタンを押して写真を追加しましょう
+                %label#add-outfit
+                  %span.btn
+                    = icon('fa fa-3x','image')
+                    = f.file_field :image, style: 'display:none'
+          .row
+            .col-md
+              .form-group
+                = f.label "コーデ名", id: 'outfit-name' 
+                = f.text_field :name, class: 'form_control'
+          .row
+            .col-md
+              .form-group
+                = f.fields_for :tags do |t|
+                  = t.label "カテゴリー", class: 'col-md'
+                  = t.collection_select :tagname, Tag.all, :tagname, :tagname, include_blank: "カテゴリーを選択してください", class: 'input-group' 
+          .row
+            .col-md
+              .form-group
+                = f.label "", class: 'col-md-4' do
+                  = f.submit '追加する', class: 'btn btn-success'
