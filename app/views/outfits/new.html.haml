@@ -6,16 +6,22 @@
       .main__upper__cover
         = nested_form_for @outfit do |f|
           .row
-            = image_tag "clothes.jpg", id: "outfit-image"
-            -# プレビュー機能用メモ　= image_tag @outfit.image if @outfit.image?, id: "outfit-image"
+            -# id "file"で、fileとdivを紐付けクリック時に連動
+            #img_field{:onclick => "$('#file').click()"}
+              - if @outfit.image.url.present?
+                = image_tag(@outfit.image.url)
+              - else
+                %i.fas.fa-image
+                %i.fas.fa-file-upload.add
+            -# id "file"をつけ、「display:none;」で隠す
+            = f.file_field :image, class: "image", style: "display:none;", id: "file"
             .col-md
               .form-group#flexbox
-                %p#add-message
-                  右のボタンを押して写真を追加しましょう
-                %label#add-outfit
-                  %span.btn
-                    = icon('fa fa-3x','image')
-                    = f.file_field :image, style: 'display:none'
+                #add-message
+                  右のボタンを押すとリセット
+                  %label#add-outfit
+                    = link_to icon('fa fa-2x','undo-alt'), new_outfit_path
+
           .row
             .col-md
               .form-group
@@ -25,10 +31,10 @@
             .col-md
               .form-group
                 = f.fields_for :tags do |t|
-                  = t.label "カテゴリー", class: 'col-md'
+                  = t.label "カテゴリー", id: 'outfit-tag'
                   = t.collection_select :tagname, Tag.all, :tagname, :tagname, include_blank: "カテゴリーを選択してください", class: 'input-group' 
           .row
             .col-md
               .form-group
-                = f.label "", class: 'col-md-4' do
+                = f.label "", id: 'add-btn' do
                   = f.submit '追加する', class: 'btn btn-success'
