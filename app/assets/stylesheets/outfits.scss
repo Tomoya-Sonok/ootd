@@ -31,7 +31,7 @@
       font-size: 30px;
       padding-left: 50px;
       padding-bottom: 20px;
-      padding-top: 20px;
+      padding-top: 32px;
     }
     &__cover{
       height: 700px;
@@ -51,7 +51,6 @@
         padding-top: 18px;    
       }
       #add-outfit{
-        // background-size: cover;
         .fa{
           height: 50px;
           width: 50px;
@@ -97,7 +96,9 @@
     background-color: white;
     &__title{
       font-size: 30px;
+      padding-left: 50px;
       padding-bottom: 20px;
+      padding-top: 32px;
     }
     #outfit-list{
       margin: 0 auto;
@@ -120,9 +121,38 @@
       }
       }
     }
+    &__outfit-show{
+      width: 100%;
+      padding-left: 360px;
+      #show-image{
+        margin: 0 auto;
+      }
+      #show-tag{
+        margin-top: 15px;
+        display: block;
+        #show-tag-content{
+          padding-right: 20px;
+          padding-left: 110px;
+          display: inline;
+        }
+      }
+      #show-name{
+        margin-top: 15px;
+        display: block;
+        #show-name-content{
+          padding-right: 20px;
+          padding-left: 110px;
+          display: inline;
+        }
+      }
+      #btns{
+        margin-left: 225px;
+        margin-top: 20px;
+      }
+    }
   }
 }
-// 画像プレビュー練習用
+// 画像プレビュー用
 #img_field {
   font-size: 15px;
   margin-top: 10px;

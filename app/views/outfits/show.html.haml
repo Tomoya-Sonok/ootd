@@ -1,11 +1,24 @@
 .main__lower
+  .container
+    = link_to :back, class: 'backward col-md-1' do
+      .back-icon
+        = icon('fa fa-2x','angle-double-left')
+      .backward-btn
+        戻る
     .main__lower__title
       コーデの詳細
-    .main__lower__outfit-list
-      .main__lower__outfit-list__outfit
-        =image_tag  "woman.jpg", class: "main__lower__outfit-list__outfit__image"
-        .main__lower__outfit-list__outfit__category-name
-          カテゴリー1
-        .main__lower__outfit-list__outfit__name
-          テストコーデ
-      
+    .main__lower__outfit-show
+      = image_tag @outfit.image.to_s, alt: '画像を表示できませんでした', height: '400px', width: '400px', id: 'show-image'
+      %label#show-tag
+        #show-tag-content
+          カテゴリー名:
+        = @tag.tagname
+      %label#show-name
+        #show-name-content
+          コーデ名:
+        = @outfit.name
+      #btns
+        .btn.btn-warning
+          = link_to '編集する', edit_outfit_path, method: :get
+        .btn.btn-danger
+          = link_to '削除する', "/outfits/#{@outfit.id}", method: :delete

@@ -1,6 +1,11 @@
 .main
   .main__upper
     .container
+      = link_to outfits_path, class: 'backward col-md-1' do
+        .back-icon
+          = icon('fa fa-2x','angle-double-left')
+        .backward-btn
+          戻る
       .main__upper__title
         コーデの追加
       .main__upper__cover
