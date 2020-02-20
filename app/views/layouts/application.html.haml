@@ -22,7 +22,11 @@
     .header
       - if current_user
         .header__profile
-          =image_tag  "man.jpg", class: "header__profile__user-image"
+          - if current_user.image.present?
+            = image_tag(current_user.image.to_s)
+          - else
+            = image_tag "default.jpg", class: "header__profile__user-image"
+          
           .header__profile__user-name
             = current_user.username
       - else
