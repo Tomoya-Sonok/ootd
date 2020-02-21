@@ -23,10 +23,9 @@
       - if current_user
         .header__profile
           - if current_user.image.present?
-            = image_tag(current_user.image.to_s)
+            = image_tag current_user.image.to_s, class: "header__profile__user-image"
           - else
             = image_tag "default.jpg", class: "header__profile__user-image"
-          
           .header__profile__user-name
             = current_user.username
       - else
