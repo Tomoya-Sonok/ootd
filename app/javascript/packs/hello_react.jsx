@@ -12,7 +12,7 @@ class Decide extends React.Component{
       super(props)
       this.state = {
         outfit: [],
-      modalIsOpen: false,
+        modalIsOpen: false,
       }
     }
 
