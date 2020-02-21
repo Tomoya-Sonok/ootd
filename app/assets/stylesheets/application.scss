@@ -82,3 +82,100 @@ footer{
     text-align: center;
   }
 }
+
+// 下のCSS変更して、プロフィール画像編集フォームの見た目変える
+#img_edit{
+  font-size: 15px;
+  margin-top: 10px;
+  padding: 5px 8px;
+  border: solid 1px #EDBC6C;
+  color: #666;
+  position: relative;
+  padding: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 320px;
+  height: 270px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: #fff;
+  overflow: hidden;
+  box-sizing: border-box;
+  transition: 0.3s ease-out;
+}
+ 
+#img_field-edit i {
+  font-size: 100px;
+  color: #aaa;
+  line-height: 520px;
+  transition: 0.3s ease-out;
+}
+ 
+#img_field-edit i.add {
+  display: none;
+  font-size: 50px;
+  position: absolute;
+  top: -220px;
+  right: 15px;
+}
+ 
+#img_field-edit:hover {
+  background-color: #EDBC6C;
+  transition: 0.3s ease-out;
+  opacity: 0.9;
+}
+ 
+#img_field-edit:hover i {
+  transition: 0.3s ease-out;
+  display: block;
+  color: #fff;
+}
+// 画像プレビュー用
+#img_field {
+  font-size: 15px;
+  margin-top: 10px;
+  padding: 5px 8px;
+  border: solid 1px #EDBC6C;
+  color: #666;
+  position: relative;
+  padding: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 400px;
+  height: 400px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: #fff;
+  overflow: hidden;
+  box-sizing: border-box;
+  transition: 0.3s ease-out;
+}
+ 
+#img_field i {
+  font-size: 100px;
+  color: #aaa;
+  line-height: 520px;
+  transition: 0.3s ease-out;
+}
+ 
+#img_field i.add {
+  display: none;
+  font-size: 50px;
+  position: absolute;
+  top: -220px;
+  right: 15px;
+}
+ 
+#img_field:hover {
+  background-color: #EDBC6C;
+  transition: 0.3s ease-out;
+  opacity: 0.9;
+}
+ 
+#img_field:hover i {
+  transition: 0.3s ease-out;
+  display: block;
+  color: #fff;
+}

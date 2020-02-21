@@ -5,26 +5,41 @@
         「毎日の服選びが面倒なあなたに。」
   .col-md-4
     %h2.title アカウントの編集
-    = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+    = form_for(resource, class: "form-group", as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
       = render "devise/shared/error_messages", resource: resource
+      .edit_user__field-content
+        -#  id "file"で、fileとdivを紐付けクリック時に連動
+        #img_edit{:onclick => "$('#file').click()"}
+          - if resource.image.present?
+            = image_tag(resource.image.to_s)
+          - else
+            = image_tag "default.jpg"
+        -# id "file"をつけ、「display:none;」で隠す
+        = f.file_field :image, class: "image", style: "display:none;", id: "file"
       .edit_user__field-content
         = f.label :username
         %br/
+      .edit_user__field-content
         = f.text_field :username
-      - if devise_mapping.confirmable? && resource.pending_reconfirmation?
-        %div
-          Currently waiting confirmation for: #{resource.unconfirmed_email}
+        = f.label '年齢'
+        %br/
+        = f.text_field :age
+      .edit_user__field-content
+        = f.label '性別'
+        %br/
+        = f.label '男性'
+        = f.radio_button :gender, :man
+        = f.label '女性'
+        = f.radio_button :gender, :woman
+        = f.label '回答しない'
+        = f.radio_button :gender, :neutral
       .edit_user__field-content
         = f.label '新しいパスワード'
         - if @minimum_password_length
-          (
           %em
-            = @minimum_password_length
-            文字以上
-          )
+            (#{@minimum_password_length}文字以上)
         %br/
         = f.password_field :password, autocomplete: "new-password"
-        
       .edit_user__field-content
         = f.label :password_confirmation
         %br/
