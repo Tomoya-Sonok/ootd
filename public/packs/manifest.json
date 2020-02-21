@@ -1,0 +1,44 @@
+{
+  "application.js": "/packs/js/application-55769eebc81618430ea5.js",
+  "application.js.map": "/packs/js/application-55769eebc81618430ea5.js.map",
+  "entrypoints": {
+    "application": {
+      "js": [
+        "/packs/js/application-55769eebc81618430ea5.js"
+      ],
+      "js.map": [
+        "/packs/js/application-55769eebc81618430ea5.js.map"
+      ]
+    },
+    "hello_react": {
+      "js": [
+        "/packs/js/hello_react-4b77b5e33e32d567b0ff.js"
+      ],
+      "js.map": [
+        "/packs/js/hello_react-4b77b5e33e32d567b0ff.js.map"
+      ]
+    },
+    "sample-btn": {
+      "js": [
+        "/packs/js/sample-btn-10b033c3b19aa73b06f2.js"
+      ],
+      "js.map": [
+        "/packs/js/sample-btn-10b033c3b19aa73b06f2.js.map"
+      ]
+    },
+    "server_rendering": {
+      "js": [
+        "/packs/js/server_rendering-518c6daf9c3a020a779f.js"
+      ],
+      "js.map": [
+        "/packs/js/server_rendering-518c6daf9c3a020a779f.js.map"
+      ]
+    }
+  },
+  "hello_react.js": "/packs/js/hello_react-4b77b5e33e32d567b0ff.js",
+  "hello_react.js.map": "/packs/js/hello_react-4b77b5e33e32d567b0ff.js.map",
+  "sample-btn.js": "/packs/js/sample-btn-10b033c3b19aa73b06f2.js",
+  "sample-btn.js.map": "/packs/js/sample-btn-10b033c3b19aa73b06f2.js.map",
+  "server_rendering.js": "/packs/js/server_rendering-518c6daf9c3a020a779f.js",
+  "server_rendering.js.map": "/packs/js/server_rendering-518c6daf9c3a020a779f.js.map"
+}
