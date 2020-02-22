@@ -48,6 +48,8 @@ gem 'devise'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
 gem 'nested_form'
+gem "react_on_rails"
+gem 'webpack'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
