@@ -1,3 +1,12 @@
+.modal-content#modal
+  = image_tag 'formal-man3.jpg', alt: '画像を表示できませんでした', height: '600px', width: '400px', class: 'modal-content__selected-outfit'
+  %p.modal-content__modal-message 
+    このコーデはいかがでしょうか！お似合いですよ♪
+  %a.modal-close
+    = icon('fa','window-close')
+    閉じる
+  %span.modal-content__next-outfit
+    次のコーデを選ぶ
 .main
   .main__upper
     .main__upper__actions
@@ -17,9 +26,10 @@
               %li
                 カテゴリー4
         -# カテゴリー追加のボタンも後々作る予定
-      %p#modal
+      
       .main__upper__actions__decide
-        = react_component('ootd_react', outfits: @outfits)
+        .modal-open
+          今日のコーデを決める！
       = link_to "コーデを追加", new_outfit_path, class: "main__upper__actions__add"
   .main__lower
     .container

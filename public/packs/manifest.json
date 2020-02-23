@@ -1,54 +1,44 @@
 {
-  "application.js": "/packs/js/application-5af5fdfbbd69887193ad.js",
-  "application.js.map": "/packs/js/application-5af5fdfbbd69887193ad.js.map",
+  "application.js": "/packs/js/application-1e18136e9efcf720e112.js",
+  "application.js.map": "/packs/js/application-1e18136e9efcf720e112.js.map",
   "entrypoints": {
     "application": {
       "js": [
-        "/packs/js/application-5af5fdfbbd69887193ad.js"
+        "/packs/js/application-1e18136e9efcf720e112.js"
       ],
       "js.map": [
-        "/packs/js/application-5af5fdfbbd69887193ad.js.map"
+        "/packs/js/application-1e18136e9efcf720e112.js.map"
       ]
     },
     "hello_react": {
       "js": [
-        "/packs/js/hello_react-4b77b5e33e32d567b0ff.js"
+        "/packs/js/hello_react-3a3837e20a92d3c1ea22.js"
       ],
       "js.map": [
-        "/packs/js/hello_react-4b77b5e33e32d567b0ff.js.map"
+        "/packs/js/hello_react-3a3837e20a92d3c1ea22.js.map"
       ]
     },
     "ootd_react": {
       "js": [
-        "/packs/js/ootd_react-048d1e7ac3b91f0bb8fc.js"
+        "/packs/js/ootd_react-f86002f5842f9723f7e3.js"
       ],
       "js.map": [
-        "/packs/js/ootd_react-048d1e7ac3b91f0bb8fc.js.map"
-      ]
-    },
-    "sample-btn": {
-      "js": [
-        "/packs/js/sample-btn-59d10367c3c749a41eba.js"
-      ],
-      "js.map": [
-        "/packs/js/sample-btn-59d10367c3c749a41eba.js.map"
+        "/packs/js/ootd_react-f86002f5842f9723f7e3.js.map"
       ]
     },
     "server_rendering": {
       "js": [
-        "/packs/js/server_rendering-45ca414a4dbf3dd42519.js"
+        "/packs/js/server_rendering-681538e8343aafe7c4fb.js"
       ],
       "js.map": [
-        "/packs/js/server_rendering-45ca414a4dbf3dd42519.js.map"
+        "/packs/js/server_rendering-681538e8343aafe7c4fb.js.map"
       ]
     }
   },
-  "hello_react.js": "/packs/js/hello_react-4b77b5e33e32d567b0ff.js",
-  "hello_react.js.map": "/packs/js/hello_react-4b77b5e33e32d567b0ff.js.map",
-  "ootd_react.js": "/packs/js/ootd_react-048d1e7ac3b91f0bb8fc.js",
-  "ootd_react.js.map": "/packs/js/ootd_react-048d1e7ac3b91f0bb8fc.js.map",
-  "sample-btn.js": "/packs/js/sample-btn-59d10367c3c749a41eba.js",
-  "sample-btn.js.map": "/packs/js/sample-btn-59d10367c3c749a41eba.js.map",
-  "server_rendering.js": "/packs/js/server_rendering-45ca414a4dbf3dd42519.js",
-  "server_rendering.js.map": "/packs/js/server_rendering-45ca414a4dbf3dd42519.js.map"
+  "hello_react.js": "/packs/js/hello_react-3a3837e20a92d3c1ea22.js",
+  "hello_react.js.map": "/packs/js/hello_react-3a3837e20a92d3c1ea22.js.map",
+  "ootd_react.js": "/packs/js/ootd_react-f86002f5842f9723f7e3.js",
+  "ootd_react.js.map": "/packs/js/ootd_react-f86002f5842f9723f7e3.js.map",
+  "server_rendering.js": "/packs/js/server_rendering-681538e8343aafe7c4fb.js",
+  "server_rendering.js.map": "/packs/js/server_rendering-681538e8343aafe7c4fb.js.map"
 }
