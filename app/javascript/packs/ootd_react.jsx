@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactDOM from 'react-dom'
 import Modal from 'react-modal'
 
 Modal.setAppElement('#modal')
@@ -21,6 +22,10 @@ class Decide extends React.Component{
 
   closeModal() {
     this.setState({ modalIsOpen: false })
+  }
+
+  componentDidMount() {
+    Modal.setAppElement('body');
   }
 
   render(){
@@ -67,3 +72,9 @@ const customStyles = {
 }
 
 export default Decide;
+
+document.addEventListener('DOMContentLoaded', () => {
+  ReactDOM.render(
+    <Decide />, document.querySelector('#modal'),
+  )
+})
