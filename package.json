@@ -11,6 +11,7 @@
     "react_ujs": "^2.6.1"
   },
   "devDependencies": {
+    "react-modal": "^3.11.1",
     "webpack-dev-server": "^3.10.3"
   }
 }

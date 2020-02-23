@@ -12,10 +12,10 @@
     },
     "ootd_react": {
       "js": [
-        "/packs/js/ootd_react-81e9a2c6a545e30c582f.js"
+        "/packs/js/ootd_react-903abaf7eb163c7e3165.js"
       ],
       "js.map": [
-        "/packs/js/ootd_react-81e9a2c6a545e30c582f.js.map"
+        "/packs/js/ootd_react-903abaf7eb163c7e3165.js.map"
       ]
     },
     "server_rendering": {
@@ -27,8 +27,8 @@
       ]
     }
   },
-  "ootd_react.js": "/packs/js/ootd_react-81e9a2c6a545e30c582f.js",
-  "ootd_react.js.map": "/packs/js/ootd_react-81e9a2c6a545e30c582f.js.map",
+  "ootd_react.js": "/packs/js/ootd_react-903abaf7eb163c7e3165.js",
+  "ootd_react.js.map": "/packs/js/ootd_react-903abaf7eb163c7e3165.js.map",
   "server_rendering.js": "/packs/js/server_rendering-4999047c12d55201bb6e.js",
   "server_rendering.js.map": "/packs/js/server_rendering-4999047c12d55201bb6e.js.map"
 }

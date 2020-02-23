@@ -45,3 +45,8 @@ $(function(){
     reader.readAsDataURL(file);
   });
 });
+
+//= require react
+//= require react_ujs
+//= require components
+//= require react_rails_modal
