@@ -1,26 +1,80 @@
-// Run this example by adding <%= javascript_pack_tag 'hello_react' %> to the head of your layout file,
-// like app/views/layouts/application.html.erb. All it does is render <div>Hello React</div> at the bottom
-// of the page.
-
 import React from 'react'
 import ReactDOM from 'react-dom'
-import PropTypes from 'prop-types'
+import Modal from 'react-modal'
 
-const Hello = props => (
-  <div>Welcome back {props.name}!</div>
-)
+Modal.setAppElement('#modal')
 
-Hello.defaultProps = {
-  name: 'David'
+class Decide extends React.Component{
+  constructor(props) {
+      super(props)
+      this.state = {
+        outfit: [],
+        modalIsOpen: false,
+      }
+    }
+
+  openModal() {
+    this.setState({
+      // outfit: ,
+      modalIsOpen: true,
+    })
+  }
+
+  closeModal() {
+    this.setState({ modalIsOpen: false })
+  }
+
+  componentDidMount() {
+    Modal.setAppElement('body');
+  }
+
+  render(){
+    return(
+      <div onClick={this.openModal.bind(this, outfit)}>
+        <div>今日のコーデを決める！</div>
+        <ModalComponent
+        isOpen={this.state.modalIsOpen}
+        onRequestClose={this.closeModal.bind(this)}
+        style={customStyles}
+        contentLabel="My First Modal"
+        >
+          <h1>Modal content</h1>
+          <p>;voahevhawghaihregawghoiwhrbovhaor</p>
+        </ModalComponent>
+      </div>
+    );
+  }
 }
 
-Hello.propTypes = {
-  name: PropTypes.string
+const customStyles = {
+  overlay: {
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    backgroundColor: 'rgba(255, 255, 255, 0.75)',
+  },
+  content: {
+    position: 'absolute',
+    top: '100px',
+    left: '100px',
+    right: '100px',
+    bottom: '100px',
+    border: '1px solid #ccc',
+    background: '#fff',
+    overflow: 'auto',
+    WebkitOverflowScrolling: 'touch',
+    borderRadius: '4px',
+    outline: 'none',
+    padding: '20px',
+  },
 }
+
+export default Decide;
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
-    <Hello name="React" />,
-    document.body.appendChild(document.createElement('div')),
+    <Decide />, document.querySelector('#modal'),
   )
 })

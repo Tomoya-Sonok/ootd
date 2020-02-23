@@ -8,9 +8,12 @@
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react_ujs": "^2.6.1"
+    "react_modal": "^1.0.5",
+    "react_ujs": "^2.6.1",
+    "webpacker-react": "^0.3.2"
   },
   "devDependencies": {
+    "react-modal": "^3.11.1",
     "webpack-dev-server": "^3.10.3"
   }
 }
