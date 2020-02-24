@@ -11,20 +11,11 @@
   .main__upper
     .main__upper__actions
       .main__upper__actions__category
-        .input-group
-          .input-group-btn
-            %button.btn.btn-default.dropdown-toggle{"data-toggle" => "dropdown", type: "button"}
-              カテゴリーを選択してください
-              %span.caret
-            %ul.dropdown-menu.pull-right
-              %li
-                カテゴリー1
-              %li
-                カテゴリー2
-              %li
-                カテゴリー3
-              %li
-                カテゴリー4
+        = form_for @outfit_tag, url: outfits_path do |form|
+          .form-group
+            = form.select :id, Tag.all.map{|o| [o.tagname, o.id]} 
+            = form.text_field :tagname
+            = form.submit '新しいカテゴリーを追加'
         -# カテゴリー追加のボタンも後々作る予定
       
       .main__upper__actions__decide

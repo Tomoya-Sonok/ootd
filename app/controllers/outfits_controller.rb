@@ -3,6 +3,8 @@ class OutfitsController < ApplicationController
   
   def index
     @outfits = current_user.outfits
+    # @outfits = Outfit.where(id: params[:tag_id], user_id: current_user.id).order(created_at: :desc)
+    @outfit_tag = Outfit.new.tags.build
   end
 
   def new
@@ -20,9 +22,15 @@ class OutfitsController < ApplicationController
   end
 
   def create
-    @outfit = Outfit.create(outfit_params)
-    @outfit.save
-    redirect_to outfits_path, notice: "新しいコーデを作成しました。"
+    if params[:commit] == "追加する"
+      @outfit = Outfit.create(outfit_params)
+      @outfit.save
+      redirect_to outfits_path, notice: "新しいコーデを作成しました。"
+    elsif params[:commit] == "新しいカテゴリーを追加"
+      @outfit_tag = Tag.create(tag_params)
+      @outfit_tag.save
+      redirect_to outfits_path, notice: "新しいカテゴリーを作成しました。"
+    end
   end
 
   def update
@@ -40,5 +48,9 @@ class OutfitsController < ApplicationController
   private
     def outfit_params
       params.require(:outfit).permit(:name, :image, tags_attributes:[:tagname]).merge(user_id: current_user.id)
+    end
+
+    def tag_params
+      params.require(:tag).permit(:id, :tagname)
     end
   end
