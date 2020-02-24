@@ -30,6 +30,8 @@ class OutfitsController < ApplicationController
       @outfit_tag = Tag.create(tag_params)
       @outfit_tag.save
       redirect_to outfits_path, notice: "新しいカテゴリーを作成しました。"
+    else
+      render @outfits, notice: "作成に失敗しました。"
     end
   end
 
@@ -51,6 +53,6 @@ class OutfitsController < ApplicationController
     end
 
     def tag_params
-      params.require(:tag).permit(:id, :tagname)
+      params.require(:tag).permit(:tagname)
     end
   end

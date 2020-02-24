@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2020_02_20_085518) do
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "image", null: false
+    t.string "image"
     t.bigint "user_id"
     t.index ["user_id"], name: "index_outfits_on_user_id"
   end
@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 2020_02_20_085518) do
   end
 
   create_table "tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "tagname", null: false
+    t.string "tagname"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

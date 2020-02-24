@@ -37,7 +37,7 @@
               .form-group
                 = f.fields_for :tags do |t|
                   = t.label "カテゴリー", id: 'outfit-tag'
-                  = t.collection_select :tagname, Tag.all, :tagname, :tagname, include_blank: "カテゴリーを選択してください", class: 'input-group' 
+                  = t.collection_select :tagname, Tag.all.uniq, :tagname, :tagname, include_blank: "カテゴリーを選択してください", class: 'input-group' 
           .row
             .col-md
               .form-group
