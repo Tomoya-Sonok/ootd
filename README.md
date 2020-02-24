@@ -4,7 +4,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string||
-|image_id|string|null: false|
+|image|string|null: false|
 |user_id|integer|null: false, foreign_key: true|
 
 ### Association
@@ -15,7 +15,7 @@
 ## tagテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
+|tagname|string||
 
 ### Association
  - has_many :outfits_tags
@@ -36,25 +36,11 @@
 ## userテーブル
 |Column|Type|Options|
 |------|----|-------|
-|username|string|null: false|
-|age|smallint|null: false|
+|username|string|null: false, unique: true|
+|age|integer|null: false, limit: 2|
 |gender|integer|null: false|
 |password|string|null: false|
 
 ### Association
  - has_many :outfits
- - has_many :relationships
- - has_many :followings, through: :relationships, source: :follow
- - has_many :reverse_of_relationships, class_name:'Relationship', foreign_key:'follow_id'
- - has_many :followers, through: :reverse_of_relationships, source: :user
-
-
-## relationshipsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|follow_id|integer|null: false, foreign_key: true|
-
-### Association
- - belongs_to :user
- - belongs_to :follow, class_name:'User'
+ 
