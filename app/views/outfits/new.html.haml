@@ -11,14 +11,12 @@
       .main__upper__cover
         = nested_form_for @outfit do |f|
           .row
-            -# id "file"で、fileとdivを紐付けクリック時に連動
             #img_field{:onclick => "$('#file').click()"}
               - if @outfit.image.url.present?
                 = image_tag(@outfit.image.url)
               - else
                 %i.fas.fa-image
                 %i.fas.fa-file-upload.add
-            -# id "file"をつけ、「display:none;」で隠す
             = f.file_field :image, class: "image", style: "display:none;", id: "file"
             .col-md
               .form-group#flexbox
@@ -37,8 +35,7 @@
               .form-group
                 = f.fields_for :tags do |t|
                   = t.label "カテゴリー", id: 'outfit-tag'
-                  = t.select :tagname, Tag.all.pluck(:tagname).uniq.map{|o| [o]}
-                  -# = t.collection_select :tagname, Tag.all.pluck(:tagname).uniq.map{|o| [o]}, :tagname, :tagname, include_blank: "カテゴリーを選択してください", class: 'input-group' 
+                  = t.select :tagname, Tag.all.pluck(:tagname).uniq.map{|o| [o]}, class: 'input-group' 
           .row
             .col-md
               .form-group

@@ -15,6 +15,7 @@
 //= require activestorage
 //= require bootstrap-sprockets
 
+// 画像ファイルアップロード機能
 $(function(){
   $fileField = $('#file')
  
@@ -44,6 +45,8 @@ $(function(){
     reader.readAsDataURL(file);
   });
 });
+
+// モーダル機能
 $(function(){
   $('.modal-open').click(function(){
     $('body').append('<div class="modal-overlay"></div>');
@@ -73,3 +76,12 @@ $(function(){
   });
 });
 
+// カテゴリー機能
+$(function() {
+  $('select').change(function() {
+
+    let tag = $(this).val();
+
+    $('#test-content').text(tag);
+  });
+});

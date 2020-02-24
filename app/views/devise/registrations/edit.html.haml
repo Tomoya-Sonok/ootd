@@ -8,13 +8,11 @@
     = form_for(resource, class: "form-group", as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
       = render "devise/shared/error_messages", resource: resource
       .edit_user__field-content
-        -#  id "file"で、fileとdivを紐付けクリック時に連動
         #img_edit{:onclick => "$('#file').click()"}
           - if resource.image.present?
             = image_tag(resource.image.to_s)
           - else
             = image_tag "default.jpg"
-        -# id "file"をつけ、「display:none;」で隠す
         = f.file_field :image, class: "image", style: "display:none;", id: "file"
       .edit_user__field-content
         = f.label :username
