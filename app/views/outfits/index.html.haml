@@ -13,7 +13,7 @@
       .main__upper__actions__category
         = form_for @outfit_tag, url: outfits_path do |form|
           .form-group
-            = form.select :id, Tag.all.uniq.map{|o| [o.tagname, o.id]}
+            = form.select :id, Tag.all.pluck(:tagname).uniq.map{|o| [o]}
             = form.text_field :tagname
             = form.submit '新しいカテゴリーを追加'
         -# カテゴリー追加のボタンも後々作る予定
