@@ -2,8 +2,8 @@ $(function(){
   $('select').on('change', function(e) {
     e.preventDefault();
     let tag = $(this).val();
-
-    $('#test-content').text(tag);
+    console.log(tag);
+    
   });
 
   // $('#new_comment').on('submit', function(e){
