@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+  # Tag.create!(
+  #   tagname: "全てのコーデ"
+  # )
+
+  Tag.create do |t|
+    t.id = 1
+    t.tagname = "全てのコーデ"
+    t.created_at = 2020-02-25
+    t.updated_at = 2020-02-25
+  end
