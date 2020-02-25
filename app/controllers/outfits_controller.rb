@@ -5,6 +5,7 @@ class OutfitsController < ApplicationController
     @outfits = current_user.outfits
     # @outfits = Outfit.where(id: params[:tag_id], user_id: current_user.id).order(created_at: :desc)
     @outfit_tag = Outfit.new.tags.build
+    
   end
 
   def new

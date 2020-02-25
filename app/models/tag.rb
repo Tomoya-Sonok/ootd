@@ -3,4 +3,5 @@ class Tag < ApplicationRecord
   has_many :outfits, through: :outfits_tags, dependent: :destroy
 
   validates_presence_of :tagname
+
 end

@@ -13,9 +13,9 @@
       .main__upper__actions__category
         = form_for @outfit_tag, url: outfits_path do |form|
           .form-group
-            = form.select :id, Tag.all.pluck(:tagname).uniq.map{|o| [o]}
+            = form.select :tagname, options_for_select(Tag.all.pluck(:tagname).uniq.map.with_index(1){|o, index| [o, index]}, Tag.first.tagname), {}, {class: 'form-control', id: 'h'}
             #test-content
-            = form.text_field :tagname
+            = form.text_field :tagname, class: 'form-control'
             = form.submit '新しいカテゴリーを追加'
       
       .main__upper__actions__decide

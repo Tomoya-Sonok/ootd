@@ -35,7 +35,7 @@
               .form-group
                 = f.fields_for :tags do |t|
                   = t.label "カテゴリー", id: 'outfit-tag'
-                  = t.select :tagname, Tag.all.pluck(:tagname).uniq.map{|o| [o]}, class: 'input-group' 
+                  = t.select :tagname, options_for_select(Tag.all.pluck(:tagname).uniq.map.with_index(1){|o, index| [o, index]}), {}, {class: 'hoge', id: 'hogehoge'}
           .row
             .col-md
               .form-group
