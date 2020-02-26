@@ -4,6 +4,9 @@ Rails.application.routes.draw do
     sessions: 'users/sessions'
   }
   resources :outfits
+  namespace :api do
+    resources :outfits, only: :index, defaults: { format: 'json' }
+  end
   root 'outfits#index'
 
   devise_scope :user do
