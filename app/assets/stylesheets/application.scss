@@ -190,20 +190,22 @@ footer{
   border:2px solid #aaa;
   background:#fff;
   text-align: center;
-  &__selected-outfit{
-    height: 600px;
+  &__modal-image{
+    height: 465px;
     width: 400px;
+    margin: 0 auto;
+    img{
+      height: 450px;
+      width: 400px;
+      padding-top: 45px;
+    }
+  }
+  &__modal-outfit-name{
+    font-size: 20px;
   }
   &__modal-message{
     margin: 15px 0 10px 0;
     font-size: 25px;
-  }
-  &__modal-close {
-    border: 1px solid;
-  }
-  &__next-outfit{
-    border: 1px solid;
-    margin-left: 10px;
   }
 }
 

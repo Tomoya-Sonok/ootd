@@ -1,56 +1,54 @@
 $(function(){
-  $('.modal-open').on('click', function(){
+  $(document).on('click', '.modal-open', function(){
     $.ajax({
       url: '/api/outfits',
       type: 'get',
-      dataType: 'json',
-      processData: false,
-      contentType: false
+      dataType: 'json'
     })
     .done(function(outfit){
-      $(".modal-content").empty();
-      console.log(outfit);
-      let insertHTML = '';
-      function buildModal(outfit){
-        insertHTML += modalContent(outfit)
-      }
-
-      function modalContent(outfit){
-        if (outfit){
-          html = 
+      console.log('非同期通信は成功！')
+      $('#modal').empty();
+      let html = buildHTML(outfit);
+      $('#modal').append(html);
+      function buildHTML(outfit){
+        let html = 
           `<div class="modal-content__modal-image">
-            <div class="modal-content__modal-image">
-              <img src=
-                ${outfit.image}
-              >
-            </div>
-            <div>
-              ${outfit.name}
-            </div>
-            <p class="modal-content__modal-message">
-              このコーデはいかがでしょうか！お似合いですよ♪
-            </p>
-          </div>`
-        };
+            <img src=
+              ${outfit.image}
+            >
+          </div>
+          <div class="modal-content__modal-outfit-name">
+            ${outfit.name}
+          </div>
+          <p class="modal-content__modal-message">
+            このコーデはいかがでしょうか！お似合いですよ♪
+          </p>
+          <a class="modal-close">
+            <i class="far fa-window-close">閉じる</i>
+          </a>`
         return html;
       };
-      buildModal(outfit);
-      $('.modal-content').append(insertHTML);
-    })
-    .fail(function(){
-      console.log('Fail');
-    })
-
+    });
+  });
+  $('.modal-open').on('click', function(){
     $('body').append('<div class="modal-overlay"></div>');
     $('.modal-overlay').fadeIn('slow');
     const modal = $('#modal');
     modalResize();
     $(modal).fadeIn('slow');
-    $('.modal-overlay, .modal-close').off().click(function(){
+    $('.modal-overlay').off().click(function(){
+        $(modal).fadeOut('slow');
+        
+        $('.modal-overlay').fadeOut('slow',function(){
+            $('.modal-overlay').remove();
+        });
+    });
+    $('.modal-close').off().click(function(){
         $(modal).fadeOut('slow');
         $('.modal-overlay').fadeOut('slow',function(){
             $('.modal-overlay').remove();
         });
+        return false;
     });
 
     $(window).on('resize', function(){
@@ -64,6 +62,6 @@ $(function(){
         var y = (h - $(modal).outerHeight(true)) / 2;
 
         $(modal).css({'left': x + 'px','top': y + 'px'});
-    }
+    };
   });
 });
