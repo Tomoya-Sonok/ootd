@@ -77,17 +77,44 @@
       width: 100%;
       padding: 35px 100px;
       display: flex;
-      justify-content: space-evenly;
-      &__decide{
-        border: 1px solid;
+      position: relative;
+      .button-2 {
+        display: inline-block;
+        padding: 1rem;
         font-size: 30px;
-        padding: 10px 0 0 10px;
-        margin-right: 80px;
+        color: #2ecf2e;
+        text-decoration: none;
+        text-align: center;
+        user-select: none;
+        border: 1px #2ecf2e solid;
+        border-radius: 20px;
+        transition: 0.4s ease;
+        position: absolute;
+        top: 50%;
+        left: 37%;
+        right: 37%;
+        transform: translateY(-50%) 
       }
-      &__add{
-        border: 1px solid;
-        height: 22px;
-        
+      .button-2:hover {
+        color: #fff;
+        background: #2ecf2e;
+      }
+      &__category{
+        position: absolute;
+        right: 15%;
+        top: 15%;
+        .form-group{
+          width: 200px;
+          .tag-add-group{
+            display: flex;
+            .add-tag-form{
+              width: 140px;
+            }
+            .tag-add{
+              width: 60px;
+            }
+          }
+        }
       }
     }
   }
@@ -99,6 +126,26 @@
       padding-left: 50px;
       padding-bottom: 20px;
       padding-top: 32px;
+      position: relative;
+      .add-path{
+        color: #2ecf2e;
+        font-size: 16px;
+        border: 1px solid;
+        border-radius: 20px;
+        padding: 8px;
+        position: absolute;
+        right: 40px;
+        display: inline-block;
+        padding: 0.6em 1.6em;
+        text-decoration: none;
+        user-select: none;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.14), 0 1px 2px 0 rgba(0, 0, 0, 0.12);
+        transition: 0.4s ease;
+      }
+      .add-path:hover{
+        box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
+        color:#2ecf2e;
+      }
     }
     #outfit-list{
       margin: 0 auto;
@@ -110,8 +157,8 @@
       display: inline-block;
       border: 1px solid;
       #outfit-image{
-      height: 180px;
-      width: 160px;
+        height: 180px;
+        width: 160px;
       }
       #outfit-tag{
         margin-top: 5px;
@@ -119,6 +166,9 @@
       #outfit-name{
         margin-top: 5px;
       }
+      }
+      #a-outfit:hover{
+        opacity: 0.6;
       }
     }
     &__outfit-show{

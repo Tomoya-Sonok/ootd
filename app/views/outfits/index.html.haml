@@ -6,18 +6,21 @@
       .main__upper__actions__category
         = form_for @outfit_tag, url: outfits_path do |form|
           .form-group
+            = form.label "カテゴリー選択"
             = form.select :tagname, options_for_select(Tag.all.pluck(:tagname).uniq.map.with_index(1){|o, index| [o, {'data-tag_id'=>index}]}, Tag.first.tagname), {}, {class: 'form-control', id: 'h'}
-            = form.text_field :tagname, class: 'form-control'
-            = form.submit '新しいカテゴリーを追加'
+            .tag-add-group
+              = form.text_field :tagname, class: 'add-tag-form'
+              = form.submit '追加', class: 'tag-add btn btn-success'
       
-      .main__upper__actions__decide
-        .modal-open
-          今日のコーデを決める！
-      = link_to "コーデを追加", new_outfit_path, class: "main__upper__actions__add"
+      .modal-open.button-2
+        今日のコーデを決める！
   .main__lower
     .container
       .main__lower__title
         コーデ一覧
+        = link_to new_outfit_path, class: "add-path" do
+          %span コーデを追加
+          %i.fas.fa-arrow-right
       #outfit-list
         - @outfits.each do |outfit|
           = link_to outfit_path(outfit) do

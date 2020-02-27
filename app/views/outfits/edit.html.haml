@@ -1,13 +1,13 @@
 .main
   .main__upper
     .container
-      = link_to outfits_path, class: 'backward col-md-1' do
+      = link_to :back, class: 'backward col-md-1' do
         .back-icon
           = icon('fa fa-2x','angle-double-left')
         .backward-btn
           戻る
       .main__upper__title
-        コーデの追加
+        コーデの編集
       .main__upper__cover
         = nested_form_for @outfit do |f|
           .row

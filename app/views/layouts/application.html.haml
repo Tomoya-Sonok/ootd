@@ -12,7 +12,8 @@
     %header
       .header-inner
         .logo
-          OOTD
+          = link_to outfits_path do
+            %i.fas.fa-tshirt.app-name OOTD
         .header-wrap
           %ul.header-nav.relative
             %div
@@ -23,18 +24,13 @@
                 %label.menu3-3{:for => "menu3"}
               .header-dropdown.absolute
                 .btm-border
-                  %a.one-line.dropdown-wrap
-                    Home
+                  = link_to "Home", outfits_path, class: 'one-line dropdown-wrap'
                 %div
-                  %a.dropdown-wrap
-                    Edit
+                  - if user_signed_in?
+                    = link_to "Edit", edit_user_registration_path, class: 'dropdown-wrap'
                 %div
-                  %a.dropdown-wrap
-                    Log out
-      -# - if user_signed_in?
-      -#   .signout-btn
-      -#     = link_to "ログアウト", users_sign_out_path, method: :delete
-      -#     = link_to "アカウントの編集", edit_user_registration_path
+                  - if user_signed_in?
+                    = link_to "Log out", users_sign_out_path, method: :delete, class: 'dropdown-wrap'
     - if notice
       %p.notice
         = notice
