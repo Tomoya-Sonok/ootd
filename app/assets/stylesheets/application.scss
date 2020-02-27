@@ -44,9 +44,117 @@ a:link, a:visited, a:hover, a:active{
 }
 
 header{
-  background-color: yellowgreen;
+  background-color: lightgreen;
   width: 100vw;
-  height: 40px;
+  height: 50px;
+  box-sizing: border-box;
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1024px;
+    height: 60px;
+    padding: 0 0.8em;
+    margin: 0 auto;
+    font-size: 1.2em;
+    #menu3 {
+      display: none;
+    }
+    .menu3 {
+      display: block;
+      width: 40px;
+      font-size: 0;
+    }
+    .menu3-1,
+    .menu3-2,
+    .menu3-3 {
+      box-sizing: border-box;
+      display: inline-block;
+      width: 40px;
+      height: 4px;
+      margin: 4px 0;
+      background-color: #333;
+      border-radius: 4px;
+      transition: all 0.4s;
+    }
+    
+    #menu3:checked ~ .menu3-1 {
+      transform: translateY(12px) rotate(-45deg);
+    }
+    
+    #menu3:checked ~ .menu3-2 {
+      opacity: 0;
+    }
+    
+    #menu3:checked ~ .menu3-3 {
+      transform: translateY(-12px) rotate(45deg);
+    }
+    .header-wrap {
+      display: flex;
+
+    }
+    
+    .relative {
+      position: relative;
+    }
+    
+    .absolute {
+      position: absolute;
+    }
+    
+    .header-nav {
+      display: flex;
+      align-items: center;
+      margin: 0 auto;
+      list-style: none;
+    }
+    
+    .header-avatar {
+      width: 3em;
+      height: 3em;
+      cursor: pointer;
+      border-radius: 1.5em;
+    }
+    
+    .header-dropdown {
+      top: 60px;
+      right: 0;
+      display: none;
+      z-index: 998;
+      width: 200px;
+      padding: 0.2em 0;
+      font-size: 14px;
+      background: #fff;
+      border-radius: 0.5em;
+      box-shadow: 0 0 9px 2px #e0e0e0;
+    }
+    
+    .btm-border {
+      padding-bottom: 0.2em;
+      margin-bottom: 0.2em;
+      border-bottom: solid 0.1em #eee;
+    }
+    
+    .one-line {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    
+    .header-dropdown .dropdown-wrap {
+      padding: 0.8em 1.4em;
+      cursor: pointer;
+    }
+    
+    .dropdown-wrap:hover {
+      background: #eee;
+    }
+    
+    .header-dropdown a {
+      display: block;
+      text-decoration: none;
+    }
+  }
 }
 .alert{
   height: 20px;

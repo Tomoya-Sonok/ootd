@@ -10,16 +10,37 @@
 
   %body
     %header
-      - if notice
-        %p.notice
-          = notice
-      - elsif alert
-        %p.alert
-          = alert
-      - if user_signed_in?
-        .signout-btn
-          = link_to "ログアウト", users_sign_out_path, method: :delete
-          = link_to "アカウントの編集", edit_user_registration_path
+      .header-inner
+        .logo
+          OOTD
+        .header-wrap
+          %ul.header-nav.relative
+            %div
+              %label.menu3#menu-btn
+                %input#menu3{:type => "checkbox", :value => "off"}/
+                %label.menu3-1{:for => "menu3"}
+                %label.menu3-2{:for => "menu3"}
+                %label.menu3-3{:for => "menu3"}
+              .header-dropdown.absolute
+                .btm-border
+                  %a.one-line.dropdown-wrap
+                    Home
+                %div
+                  %a.dropdown-wrap
+                    Edit
+                %div
+                  %a.dropdown-wrap
+                    Log out
+      -# - if user_signed_in?
+      -#   .signout-btn
+      -#     = link_to "ログアウト", users_sign_out_path, method: :delete
+      -#     = link_to "アカウントの編集", edit_user_registration_path
+    - if notice
+      %p.notice
+        = notice
+    - elsif alert
+      %p.alert
+        = alert
     .header
       - if current_user
         .header__profile
