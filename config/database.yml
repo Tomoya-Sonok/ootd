@@ -51,5 +51,5 @@ production:
   database: ootd_production
   pool: 5
   username: root
-  password: otuya351227
-  host: localhost
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock

@@ -49,10 +49,7 @@ gem 'devise-i18n'
 gem 'devise-i18n-views'
 gem 'nested_form'
 
-gem 'react-rails'
-gem 'react_rails_modal'
-gem 'webpack'
-gem 'webpacker', github: "rails/webpacker"
+
 
 
 group :development, :test do
