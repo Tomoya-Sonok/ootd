@@ -1,0 +1,27 @@
+{
+  "name": "ootd",
+  "version": "1.0.0",
+  "description": "## outfitテーブル |Column|Type|Options| |------|----|-------| |name|string|| |image_id|string|null: false| |user_id|integer|null: false, foreign_key: true|",
+  "main": "babel.config.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "dependencies": {
+    "webpack-dev-server": "^3.10.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tomoya-Sonok/ootd.git"
+  },
+  "author": "Tomoya Sonokui",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tomoya-Sonok/ootd/issues"
+  },
+  "homepage": "https://github.com/Tomoya-Sonok/ootd#readme"
+}
