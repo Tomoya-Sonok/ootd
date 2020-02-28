@@ -27,12 +27,12 @@ class OutfitsController < ApplicationController
       @outfit = Outfit.create(outfit_params)
       @outfit.save
       redirect_to outfits_path, notice: "新しいコーデを作成しました。"
-    elsif params[:commit] == "新しいカテゴリーを追加"
+    elsif params[:commit] == "追加"
       @outfit_tag = Tag.create(tag_params)
       @outfit_tag.save
       redirect_to outfits_path, notice: "新しいカテゴリーを作成しました。"
     else
-      render @outfits, notice: "作成に失敗しました。"
+      redirect_to outfits_path, notice: "作成に失敗しました。"
     end
   end
 
