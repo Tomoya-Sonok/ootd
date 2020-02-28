@@ -20,12 +20,10 @@
 @import "users";
 
 body{
-  .background-img{
-    background-image: image-url("test-background.jpg");
-    background-size: cover;
-  }
+  background-image: image-url("test-background.jpg");
+  background-size: cover;
   position: relative;
-  padding-bottom: 50px;
+  padding-bottom: 70px;
 }
 
 a{
@@ -41,12 +39,12 @@ a:link, a:visited, a:hover, a:active{
 .notice{
   height: 20px;
   margin: 0;
-  background-color: yellowgreen;
+  background-color: #3F7942;
   color: red;
 }
 
 header{
-  background-color: yellowgreen;
+  background-color: #3F7942;
   width: 100vw;
   height: 50px;
   box-sizing: border-box;
@@ -169,7 +167,7 @@ header{
   margin: 0;
   padding: 0;
   border-radius: 0;
-  background-color: yellowgreen;
+  background-color: #3F7942;
   color: red;
 }
 
@@ -178,7 +176,7 @@ header{
   margin: 0;
   padding: 10px;
   border-radius: 0;
-  background-color: yellowgreen;
+  background-color: #3F7942;
   position: absolute;
   right: 20px;
 }
@@ -187,13 +185,13 @@ header{
 
 
 footer{
-  height: 50px;
+  height: 70px;
   width: 100vw;
-  background-color: green;
+  background-color: #3F7942;
   position: absolute;
   bottom: 0;
   .content{
-    line-height: 50px;
+    line-height: 70px;
     margin: 0 auto;
     text-align: center;
   }
@@ -299,7 +297,7 @@ footer{
 .modal-content {
   position:fixed;
   display:none;
-  z-index:2;
+  z-index:999;
   width:50%;
   margin:0;
   padding:10px 20px;
