@@ -1,6 +1,6 @@
 class Api::OutfitsController < ApplicationController
   def index
-    @outfit = current_user.outfits.find(Outfit.pluck(:id).sample)
+    @outfit = Outfit.find((Outfit.where(user_id: current_user.id)).pluck(:id).sample)
   end
 end
 

@@ -1,4 +1,16 @@
 $(function(){
+  $(window).on('resize', function(){
+      modalResize();
+  });
+  
+  function modalResize(){
+      var w = $(window).width();
+      var h = $(window).height();
+      var x = (w - $(modal).outerWidth(true)) / 2;
+      var y = (h - $(modal).outerHeight(true)) / 2;
+  
+      $(modal).css({'left': x + 'px','top': y + 'px'});
+  };
   $(document).on('click', '.modal-open', function(){
     $.ajax({
       url: '/api/outfits',
@@ -50,18 +62,5 @@ $(function(){
         });
         return false;
     });
-
-    $(window).on('resize', function(){
-        modalResize();
-    });
-
-    function modalResize(){
-        var w = $(window).width();
-        var h = $(window).height();
-        var x = (w - $(modal).outerWidth(true)) / 2;
-        var y = (h - $(modal).outerHeight(true)) / 2;
-
-        $(modal).css({'left': x + 'px','top': y + 'px'});
-    };
   });
 });
