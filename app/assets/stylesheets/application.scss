@@ -180,15 +180,17 @@ header{
   position: absolute;
   right: 20px;
 }
-// ログアウトボタンはのちに編集予定
-// 編集ボタンを横に配置する
+
+#category-form{
+  width: 72%;
+}
 
 
 footer{
   height: 70px;
   width: 100vw;
   background-color: #3F7942;
-  position: fixed;
+  position: absolute;
   bottom: 0;
   .content{
     line-height: 70px;
