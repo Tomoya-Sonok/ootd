@@ -33,7 +33,7 @@ $(function(){
             ${outfit.name}
           </div>
           <p class="modal-content__modal-message">
-            このコーデはいかがでしょうか！お似合いですよ♪
+            このコーデはいかがでしょうか！<br>お似合いですよ♪
           </p>
           <a class="modal-close">
             <i class="far fa-window-close">閉じる</i>

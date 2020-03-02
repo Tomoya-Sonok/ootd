@@ -20,6 +20,7 @@ class OutfitsController < ApplicationController
 
   def edit
     @outfit = Outfit.find(params[:id])
+    @outfit_tag = Outfit.new.tags.build
   end
 
   def create
