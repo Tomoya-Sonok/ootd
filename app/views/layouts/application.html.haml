@@ -14,22 +14,21 @@
         .logo
           = link_to outfits_path do
             %i.fas.fa-tshirt.app-name OOTD
-        .header-wrap
-          %ul.header-nav.relative
-            %div
-              %label.menu3#menu-btn
-                %input#menu3{:type => "checkbox", :value => "off"}/
-                %label.menu3-1{:for => "menu3"}
-                %label.menu3-2{:for => "menu3"}
-                %label.menu3-3{:for => "menu3"}
-              .header-dropdown.absolute
-                .btm-border
-                  = link_to "Home", outfits_path, class: 'one-line dropdown-wrap'
-                %div
-                  - if user_signed_in?
+        - if user_signed_in?
+          .header-wrap
+            %ul.header-nav.relative
+              %div
+                %label.menu3#menu-btn
+                  %input#menu3{:type => "checkbox", :value => "off"}/
+                  %label.menu3-1{:for => "menu3"}
+                  %label.menu3-2{:for => "menu3"}
+                  %label.menu3-3{:for => "menu3"}
+                .header-dropdown.absolute
+                  .btm-border
+                    = link_to "Home", outfits_path, class: 'one-line dropdown-wrap'
+                  %div
                     = link_to "Edit", edit_user_registration_path, class: 'dropdown-wrap'
-                %div
-                  - if user_signed_in?
+                  %div
                     = link_to "Log out", users_sign_out_path, method: :delete, class: 'dropdown-wrap'
     - if notice
       %p.notice
