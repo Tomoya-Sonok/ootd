@@ -1,16 +1,17 @@
 class OutfitsController < ApplicationController
   before_action :authenticate_user!
+  # before_action :set_tag
   
   def index
     # @outfit = Outfit.find(Outfit.pluck(:id).sample)
     @outfits = current_user.outfits
     # @outfits = Outfit.where(id: params[:tag_id], user_id: current_user.id).order(created_at: :desc)
-    @outfit_tag = Outfit.new.tags.build
+    @outfit_tag = Tag.new
   end
 
   def new
     @outfit = Outfit.new
-    @outfit.tags.build
+    @outfit_tag = Tag.new
   end
 
   def show
@@ -25,15 +26,21 @@ class OutfitsController < ApplicationController
 
   def create
     if params[:commit] == "追加する"
+      @tag = Tag.create(tag_params)
       @outfit = Outfit.create(outfit_params)
-      @outfit.save
-      redirect_to outfits_path, notice: "新しいコーデを作成しました。"
+      binding.pry
+      if @outfit.save && @tag.save
+        redirect_to outfits_path, notice: "新しいコーデを作成しました。"
+      else
+        redirect_to outfits_path, notice: "作成に失敗しました。"
+      end
     elsif params[:commit] == "追加"
       @outfit_tag = Tag.create(tag_params)
-      @outfit_tag.save
-      redirect_to outfits_path, notice: "新しいカテゴリーを作成しました。"
-    else
-      redirect_to outfits_path, notice: "作成に失敗しました。"
+      if @outfit_tag.save
+        redirect_to outfits_path, notice: "新しいカテゴリーを作成しました。"
+      else
+        redirect_to outfits_path, notice: "作成に失敗しました。"
+      end
     end
   end
 
@@ -51,9 +58,8 @@ class OutfitsController < ApplicationController
 
   private
     def outfit_params
-      params.require(:outfit).permit(:name, :image, tags_attributes:[:tagname]).merge(user_id: current_user.id)
+      params.require(:outfit).permit(:name, :image, :tag_id).merge(user_id: current_user.id)
     end
-
     def tag_params
       params.require(:tag).permit(:tagname)
     end
