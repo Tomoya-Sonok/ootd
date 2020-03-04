@@ -50,5 +50,5 @@ production:
   pool: 5
   database: ootd_production
   username: root
-  password: 
+  password: <%= ENV['DATABASE_PASSWORD'] %>
   socket: /var/lib/mysql/mysql.sock
