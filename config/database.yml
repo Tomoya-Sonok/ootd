@@ -31,7 +31,7 @@ development:
   database: ootd_development
   pool: 5
   username: root
-  password: otuya351227
+  password: 
   host: localhost
 
 test:
@@ -41,15 +41,14 @@ test:
   database: ootd_test
   pool: 5
   username: root
-  password: otuya351227
+  password: 
   host: localhost
 
 production:
   adapter: mysql2
   encoding: utf8
-  reconnect: false
-  database: ootd_production
   pool: 5
+  database: ootd_production
   username: root
-  password: <%= ENV['DATABASE_PASSWORD'] %>
+  password: 
   socket: /var/lib/mysql/mysql.sock
