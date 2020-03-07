@@ -28,7 +28,6 @@ class OutfitsController < ApplicationController
     if params[:commit] == "追加する"
       @tag = Tag.create(tag_params)
       @outfit = Outfit.create(outfit_params)
-      binding.pry
       if @outfit.save && @tag.save
         redirect_to outfits_path, notice: "新しいコーデを作成しました。"
       else
