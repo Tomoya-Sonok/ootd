@@ -34,8 +34,8 @@
                 = fields_for @outfit_tag do |t|
                   = t.label "カテゴリー", id: 'outfit-tag'
                   = t.select :tagname, options_for_select(Tag.all.pluck(:tagname).uniq.map.with_index(1){|o, index| [o, {'data-tag_id'=>index}]}, Tag.first.tagname), {}, {class: 'form-control', id: 'category-form'}
-                  -# = t.collection_select( :id, Tag.all.pluck(:tagname).uniq.map.with_index(1){|o, index| [o, {'data-tag_id'=>index}]}, :id, Tag.first.tagname)
-                  -# 上のselectの記述でtag_idを取得できれば、あとはコントローラに必要な一文書くだけ！
+          -#         -# = t.collection_select( :id, Tag.all.pluck(:tagname).uniq.map.with_index(1){|o, index| [o, {'data-tag_id'=>index}]}, :id, Tag.first.tagname)
+          -#         -# 上のselectの記述でtag_idを取得できれば、あとはコントローラに必要な一文書くだけ！
           .row
             .col-md
               .form-group
