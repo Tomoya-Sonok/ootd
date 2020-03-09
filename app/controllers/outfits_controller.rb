@@ -11,22 +11,22 @@ class OutfitsController < ApplicationController
 
   def new
     @outfit = Outfit.new
-    @outfit_tag = Tag.new
+    # @outfit_tag = Tag.new
   end
 
   def show
     @outfit = Outfit.find(params[:id])
-    @tag = @outfit.tags.find_by(params[:tagname])
+    # @tag = @outfit.tags.find_by(params[:tagname])
   end
 
   def edit
     @outfit = Outfit.find(params[:id])
-    @outfit_tag = Outfit.new.tags.build
+    # @outfit_tag = Outfit.new.tags.build
   end
 
   def create
     if params[:commit] == "追加する"
-      @tag = Tag.create(tag_params)
+      # @tag = Tag.create(tag_params)
       @outfit = Outfit.create(outfit_params)
       if @outfit.save && @tag.save
         redirect_to outfits_path, notice: "新しいコーデを作成しました。"

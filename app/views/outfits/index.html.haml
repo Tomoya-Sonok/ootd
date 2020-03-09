@@ -26,9 +26,9 @@
           = link_to outfit_path(outfit) do
             .col-md-4#a-outfit
               = image_tag outfit.image.to_s, id: "outfit-image"
-              #outfit-tag
-                - outfit.tags.each do |tag|
-                  = tag.tagname
+              -# #outfit-tag
+              -#   - outfit.tags.each do |tag|
+              -#     = tag.tagname
               #outfit-name
                 = outfit.name
       #selected-list
