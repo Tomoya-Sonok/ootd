@@ -20,6 +20,7 @@ $(function(){
     .done(function(outfit){
       console.log('非同期通信は成功！')
       $('#modal').empty();
+      debugger;
       let html = buildHTML(outfit);
       $('#modal').append(html);
       function buildHTML(outfit){
