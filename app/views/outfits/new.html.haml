@@ -9,7 +9,7 @@
       .main__upper__title
         コーデの追加
       .main__upper__cover
-        = nested_form_for @outfit do |f|
+        = form_for @outfit do |f|
           .row
             #img_field{:onclick => "$('#file').click()"}
 

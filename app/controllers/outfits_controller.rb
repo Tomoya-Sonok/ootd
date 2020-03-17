@@ -27,19 +27,20 @@ class OutfitsController < ApplicationController
   def create
     if params[:commit] == "追加する"
       # @tag = Tag.create(tag_params)
-      @outfit = Outfit.create(outfit_params)
-      if @outfit.save && @tag.save
+      @outfit = Outfit.new(outfit_params)
+      # if @outfit.save && @tag.save
+      if @outfit.save!
         redirect_to outfits_path, notice: "新しいコーデを作成しました。"
       else
         redirect_to outfits_path, notice: "作成に失敗しました。"
       end
-    elsif params[:commit] == "追加"
-      @outfit_tag = Tag.create(tag_params)
-      if @outfit_tag.save
-        redirect_to outfits_path, notice: "新しいカテゴリーを作成しました。"
-      else
-        redirect_to outfits_path, notice: "作成に失敗しました。"
-      end
+    # elsif params[:commit] == "追加"
+    #   @outfit_tag = Tag.new(tag_params)
+    #   if @outfit_tag.save
+    #     redirect_to outfits_path, notice: "新しいカテゴリーを作成しました。"
+    #   else
+    #     redirect_to outfits_path, notice: "作成に失敗しました。"
+      # end
     end
   end
 
