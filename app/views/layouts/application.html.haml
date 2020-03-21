@@ -9,46 +9,46 @@
     = javascript_include_tag 'application'
 
   %body
-    %header
-      .header-inner
-        .logo
-          = link_to outfits_path do
-            %i.fas.fa-tshirt.app-name OOTD
-        - if user_signed_in?
-          .header-wrap
-            %ul.header-nav.relative
-              %div
-                %label.menu3#menu-btn
-                  %input#menu3{:type => "checkbox", :value => "off"}/
-                  %label.menu3-1{:for => "menu3"}
-                  %label.menu3-2{:for => "menu3"}
-                  %label.menu3-3{:for => "menu3"}
-                .header-dropdown.absolute
-                  .btm-border
-                    = link_to "Home", outfits_path, class: 'one-line dropdown-wrap'
-                  %div
-                    = link_to "Edit", edit_user_registration_path, class: 'dropdown-wrap'
-                  %div
-                    = link_to "Log out", users_sign_out_path, method: :delete, class: 'dropdown-wrap'
-    - if notice
-      %p.notice
-        = notice
-    - elsif alert
-      %p.alert
-        = alert
-    .header
-      - if current_user
-        .header__profile
-          - if current_user.image.present?
-            = image_tag current_user.image.url, class: "header__profile__user-image"
-          - else
-            -# = image_tag "default.jpg", class: "header__profile__user-image"
-            = image_tag "default.jpg", class: "header__profile__user-image"
-          .header__profile__user-name
-            = current_user.username
-      - else
-        %span
-    = yield
+    .wrapper
+      %header
+        .header-inner
+          .logo
+            = link_to outfits_path do
+              %i.fas.fa-tshirt.app-name OOTD
+          - if user_signed_in?
+            .header-wrap
+              %ul.header-nav.relative
+                %div
+                  %label.menu3#menu-btn
+                    %input#menu3{:type => "checkbox", :value => "off"}/
+                    %label.menu3-1{:for => "menu3"}
+                    %label.menu3-2{:for => "menu3"}
+                    %label.menu3-3{:for => "menu3"}
+                  .header-dropdown.absolute
+                    .btm-border
+                      = link_to "Home", outfits_path, class: 'one-line dropdown-wrap'
+                    %div
+                      = link_to "Edit", edit_user_registration_path, class: 'dropdown-wrap'
+                    %div
+                      = link_to "Log out", users_sign_out_path, method: :delete, class: 'dropdown-wrap'
+      - if notice
+        %p.notice
+          = notice
+      - elsif alert
+        %p.alert
+          = alert
+      .content
+        .header
+          - if current_user
+            .header__profile
+              - if current_user.image.present?
+                = image_tag current_user.image.url, class: "header__profile__user-image"
+              - else
+                -# = image_tag "default.jpg", class: "header__profile__user-image"
+                = image_tag "default.jpg", class: "header__profile__user-image"
+              .header__profile__user-name
+                = current_user.username
+        = yield
     %footer
       .content
         ©︎ 2020 OOTD by Tomoya Sonokui

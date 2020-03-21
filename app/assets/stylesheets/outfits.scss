@@ -25,6 +25,8 @@
 }
 .main{
   width: 100vw;
+  height: 86vh;
+  background-color: white;
   &__upper{
     background-color: whitesmoke;
     &__title{
@@ -119,8 +121,6 @@
     }
   }
   &__lower{
-    width: 100%;
-    background-color: white;
     &__title{
       font-size: 30px;
       padding-bottom: 20px;

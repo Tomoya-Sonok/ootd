@@ -19,11 +19,18 @@
 @import "outfits";
 @import "users";
 
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  min-height: 96.7vh;
+  .content{
+    flex-grow: 1;
+  }
+}
+
 body{
   background-image: image-url("test-background.jpg");
   background-size: cover;
-  position: relative;
-  padding-bottom: 70px;
 }
 
 a{
@@ -190,8 +197,6 @@ footer{
   height: 70px;
   width: 100vw;
   background-color: #3F7942;
-  position: absolute;
-  bottom: 0;
   .content{
     line-height: 70px;
     margin: 0 auto;
