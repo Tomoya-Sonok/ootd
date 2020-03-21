@@ -26,6 +26,7 @@
 .main{
   width: 100vw;
   background-color: white;
+  flex-grow: 1;
   &__upper{
     background-color: whitesmoke;
     &__title{
@@ -119,85 +120,88 @@
       }
     }
   }
-  &__lower{
-    &__title{
-      font-size: 30px;
-      padding-bottom: 20px;
-      padding-top: 32px;
-      position: relative;
-      .add-path{
-        color: #2ecf2e;
-        font-size: 16px;
-        border: 1px solid;
-        border-radius: 20px;
-        padding: 8px;
-        position: absolute;
-        right: 40px;
-        display: inline-block;
-        padding: 0.6em 1.6em;
-        text-decoration: none;
-        user-select: none;
-        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.14), 0 1px 2px 0 rgba(0, 0, 0, 0.12);
-        transition: 0.4s ease;
-      }
-      .add-path:hover{
-        box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
-        color:#2ecf2e;
-      }
+  
+}
+.main__lower{
+  background-color: white;
+  flex-grow: 1;
+  &__title{
+    font-size: 30px;
+    padding-bottom: 20px;
+    padding-top: 32px;
+    position: relative;
+    .add-path{
+      color: #2ecf2e;
+      font-size: 16px;
+      border: 1px solid;
+      border-radius: 20px;
+      padding: 8px;
+      position: absolute;
+      right: 40px;
+      display: inline-block;
+      padding: 0.6em 1.6em;
+      text-decoration: none;
+      user-select: none;
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.14), 0 1px 2px 0 rgba(0, 0, 0, 0.12);
+      transition: 0.4s ease;
     }
-    #outfit-list{
+    .add-path:hover{
+      box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
+      color:#2ecf2e;
+    }
+  }
+  #outfit-list{
+    margin: 0 auto;
+    width: 98%;
+    #a-outfit{
+      height: 450px;
+      width: 345px;
+      padding: 20px;
+      margin: 0px;
+      display: inline-block;
+      border: 1px solid;
+    #outfit-image{
+      height: 370px;
+      width: 300px;
+    }
+    #outfit-tag{
+      margin-top: 5px;
+    }
+    #outfit-name{
+      margin-top: 5px;
+    }
+    }
+    #a-outfit:hover{
+      opacity: 0.6;
+    }
+  }
+  &__outfit-show{
+    width: 100%;
+    padding-left: 360px;
+    #show-image{
       margin: 0 auto;
-      width: 98%;
-      #a-outfit{
-        height: 450px;
-        width: 345px;
-        padding: 20px;
-        margin: 0px;
-        display: inline-block;
-        border: 1px solid;
-      #outfit-image{
-        height: 370px;
-        width: 300px;
-      }
-      #outfit-tag{
-        margin-top: 5px;
-      }
-      #outfit-name{
-        margin-top: 5px;
-      }
-      }
-      #a-outfit:hover{
-        opacity: 0.6;
+    }
+    #show-tag{
+      margin-top: 15px;
+      display: block;
+      #show-tag-content{
+        padding-right: 20px;
+        padding-left: 110px;
+        display: inline;
       }
     }
-    &__outfit-show{
-      width: 100%;
-      padding-left: 360px;
-      #show-image{
-        margin: 0 auto;
+    #show-name{
+      margin-top: 15px;
+      display: block;
+      #show-name-content{
+        padding-right: 20px;
+        padding-left: 110px;
+        display: inline;
       }
-      #show-tag{
-        margin-top: 15px;
-        display: block;
-        #show-tag-content{
-          padding-right: 20px;
-          padding-left: 110px;
-          display: inline;
-        }
-      }
-      #show-name{
-        margin-top: 15px;
-        display: block;
-        #show-name-content{
-          padding-right: 20px;
-          padding-left: 110px;
-          display: inline;
-        }
-      }
-      #btns{
-        margin-left: 225px;
-        margin-top: 20px;
-      }
+    }
+    #btns{
+      margin-left: 225px;
+      margin-top: 20px;
     }
   }
 }
