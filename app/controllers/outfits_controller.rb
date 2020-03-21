@@ -6,7 +6,7 @@ class OutfitsController < ApplicationController
     # @outfit = Outfit.find(Outfit.pluck(:id).sample)
     @outfits = current_user.outfits
     # @outfits = Outfit.where(id: params[:tag_id], user_id: current_user.id).order(created_at: :desc)
-    @outfit_tag = Tag.new
+    # @outfit_tag = Tag.new
   end
 
   def new

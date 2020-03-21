@@ -7,19 +7,14 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-
-  Tag.create do |t|
-    t.id = 1
-    t.tagname = "全てのコーデ"
-    t.created_at = 2020-02-25
-    t.updated_at = 2020-02-25
-  end
-
-  # User.create do |u|
-  #   u.id = 1
-  #   u.username = "testuser"
-  #   u.age = 25
-  #   u.gender = 0
-  #   u.created_at = 2020-02-25
-  #   u.updated_at = 2020-02-25
-  # end
+User.create!(
+  [
+    {
+      username: 'テストくん',
+      gender: 0,
+      age: 24,
+      password: "testuser",
+      password_confirmation: "testuser",
+    },
+  ]
+)

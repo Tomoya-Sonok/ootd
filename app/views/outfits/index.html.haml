@@ -4,13 +4,13 @@
   .main__upper
     .main__upper__actions
       .main__upper__actions__category
-        = form_for @outfit_tag, url: outfits_path do |form|
-          .form-group
-            = form.label "カテゴリー選択"
-            = form.select :tagname, options_for_select(Tag.all.pluck(:tagname).uniq.map.with_index(1){|o, index| [o, {'data-tag_id'=>index}]}, Tag.first.tagname), {}, {class: 'form-control', id: 'category-form'}
-            .tag-add-group
-              = form.text_field :tagname, class: 'add-tag-form'
-              = form.submit '追加', class: 'tag-add btn btn-success'
+        -# = form_for @outfit_tag, url: outfits_path do |form|
+          -# .form-group
+            -# = form.label "カテゴリー選択"
+            -# = form.select :tagname, options_for_select(Tag.all.pluck(:tagname).uniq.map.with_index(1){|o, index| [o, {'data-tag_id'=>index}]}, Tag.first.tagname), {}, {class: 'form-control', id: 'category-form'}
+            -# .tag-add-group
+              -# = form.text_field :tagname, class: 'add-tag-form'
+              -# = form.submit '追加', class: 'tag-add btn btn-success'
       
       .modal-open.button-2
         今日のコーデを決める！
