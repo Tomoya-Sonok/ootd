@@ -4,10 +4,11 @@
   .main__upper
     .main__upper__actions
       .main__upper__actions__category
-        -# = form_for @outfit_tag, url: outfits_path do |form|
-          -# .form-group
-            -# = form.label "カテゴリー選択"
-            -# = form.select :tagname, options_for_select(Tag.all.pluck(:tagname).uniq.map.with_index(1){|o, index| [o, {'data-tag_id'=>index}]}, Tag.first.tagname), {}, {class: 'form-control', id: 'category-form'}
+        = form_with(url: search_outfits_path, local: true, method: :get, class: "search-form") do |form|
+          .form-group
+            = select_tag :mood, options_for_select(@moods.pluck(:name).uniq.map.with_index(1){|o, index| [o, {'data-tag_id'=>index}]}, Mood.first.name), class: "chosen-select"
+            -# = select_tag :mood, options_for_select(@moods.pluck(:name).uniq.map.with_index(1){|o, index| [o, {'data-tag_id'=>index}]}, Mood.first.name), {}, {class: 'form-control', id: 'category-form'}
+
             -# .tag-add-group
               -# = form.text_field :tagname, class: 'add-tag-form'
               -# = form.submit '追加', class: 'tag-add btn btn-success'
@@ -30,6 +31,14 @@
                 = outfit.mood.name
               #outfit-name
                 = outfit.name
-      #selected-list
+      -# #selected-list
+      -#   - @outfitsSelected.each do |outfit|
+      -#     = link_to outfit_path(outfit) do
+      -#       .col-md-4#a-outfit
+      -#         = image_tag outfit.image.to_s, id: "outfit-image"
+      -#         #outfit-mood
+      -#           = outfit.mood.name
+      -#         #outfit-name
+      -#           = outfit.name
 -# jQueryで、カテゴリーが選択された時には、そのカテゴリーのコーデリスト
 -# だけを表示できるようにする。その際は、上記の#outfit-listはdisabledにする

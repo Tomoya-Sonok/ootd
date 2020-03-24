@@ -5,8 +5,8 @@ class OutfitsController < ApplicationController
   def index
     # @outfit = Outfit.find(Outfit.pluck(:id).sample)
     @outfits = current_user.outfits
-    # @outfits = Outfit.where(id: params[:tag_id], user_id: current_user.id).order(created_at: :desc)
-    # @outfit_tag = Tag.new
+    @moods = Mood.all
+    # @outfitsSelected = Outfit.where(mood_id: [?????], user_id: current_user.id).order(created_at: :desc)
   end
 
   def new
@@ -52,6 +52,14 @@ class OutfitsController < ApplicationController
     outfit = Outfit.find(params[:id])
     outfit.destroy
     redirect_to outfits_path, notice: "コーデを削除しました。"
+  end
+
+  def search
+    @outfits = Outfit.search(params[:keyword])
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   private
