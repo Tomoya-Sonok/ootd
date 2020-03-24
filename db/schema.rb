@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_03_041541) do
+ActiveRecord::Schema.define(version: 2020_03_23_123608) do
+
+  create_table "moods", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "outfits", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -18,6 +24,8 @@ ActiveRecord::Schema.define(version: 2020_03_03_041541) do
     t.datetime "updated_at", null: false
     t.string "image", null: false
     t.bigint "user_id"
+    t.bigint "mood_id"
+    t.index ["mood_id"], name: "index_outfits_on_mood_id"
     t.index ["user_id"], name: "index_outfits_on_user_id"
   end
 
@@ -37,5 +45,6 @@ ActiveRecord::Schema.define(version: 2020_03_03_041541) do
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
+  add_foreign_key "outfits", "moods"
   add_foreign_key "outfits", "users"
 end
