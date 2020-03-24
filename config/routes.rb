@@ -3,7 +3,11 @@ Rails.application.routes.draw do
     registrations: 'users/registrations',
     sessions: 'users/sessions'
   }
-  resources :outfits
+  resources :outfits do
+    collection do
+      get 'search'
+    end
+  end
   namespace :api do
     resources :outfits, only: :index, defaults: { format: 'json' }
   end

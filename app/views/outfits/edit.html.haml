@@ -30,12 +30,14 @@
               .form-group
                 = f.label "コーデ名", id: 'outfit-name' 
                 = f.text_field :name, class: 'form_control'
-          -# .row
-          -#   .col-md
-          -#     .form-group
-          -#       = f.fields_for @outfit_tag do |t|
-          -#         = t.label "カテゴリー", id: 'outfit-tag'
-          -#         = t.select :tagname, options_for_select(Tag.all.pluck(:tagname).uniq.map.with_index(1){|o, index| [o, {'data-tag_id'=>index}]}, Tag.first.tagname), {}, {class: 'form-control', id: 'category-form'}
+          .row
+            .col-md
+              .form-group
+                = f.label "ムード", id: 'outfit-mood' do
+                  = f.select :mood_id, options_for_select(@moods.map{|o| [o.name, o.id]}, @mood.name), {}, {class: 'form-control', id: 'category-form'}
+                -# = f.fields_for @mood do |m|
+                -#   = m.label "ムード", id: 'outfit-mood'
+                -#   = m.select :name, options_for_select(Mood.all.pluck(:name).uniq.map.with_index(1){|o, index| [o, {'data-mood_id'=>index}]}, @mood.name), {}, {class: 'form-control', id: 'category-form'}
           .row
             .col-md
               .form-group
