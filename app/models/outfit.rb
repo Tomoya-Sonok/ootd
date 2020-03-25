@@ -3,8 +3,13 @@ class Outfit < ApplicationRecord
 
   belongs_to :user, optional: true
   belongs_to :mood
-  # belongs_to :tag
-  # accepts_nested_attributes_for :tags, allow_destroy: true
 
-  # validates :image, uniqueness: true, null: false
+
+  def self.search(search)
+    if search != 1 
+      Outfit.where(mood_id: search)
+    else
+      Outfit.where(user_id: current_user.id)
+    end
+  end
 end
