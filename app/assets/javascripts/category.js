@@ -1,10 +1,11 @@
-$(function(){
-  $('select').on('change', function(e) {
-    e.preventDefault();
-    let tag = $(this).val();
-    console.log(tag);
+// $(function(){
+//   $('select').on('change', function(e) {
+//     e.preventDefault();
+//     let tag = $(this).val();
+//     console.log(tag);
+//     console.log('success!');
     
-  });
+//   });
 
   // $('#new_comment').on('submit', function(e){
   //   e.preventDefault();
@@ -19,4 +20,4 @@ $(function(){
   //     contentType: false
   //   })
   // })
-})
+// })
