@@ -12,9 +12,11 @@ $(function(){
       $(modal).css({'left': x + 'px','top': y + 'px'});
   };
   $(document).on('click', '.modal-open', function(){
+    let input = $(".search-input").val();
     $.ajax({
       url: '/api/outfits',
       type: 'get',
+      data: { keyword: input },
       dataType: 'json'
     })
     .done(function(outfit){

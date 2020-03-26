@@ -6,6 +6,7 @@ class OutfitsController < ApplicationController
     # @outfit = Outfit.find(Outfit.pluck(:id).sample)
     @outfits = current_user.outfits
     @moods = Mood.all
+    @mood = Mood.new
     # @outfitsSelected = Outfit.where(mood_id: [?????], user_id: current_user.id).order(created_at: :desc)
   end
 
@@ -32,13 +33,13 @@ class OutfitsController < ApplicationController
       else
         redirect_to new_outfit_path, notice: "作成に失敗しました。"
       end
-    # elsif params[:commit] == "追加"
-    #   @outfit_tag = Tag.new(tag_params)
-    #   if @outfit_tag.save
-    #     redirect_to outfits_path, notice: "新しいカテゴリーを作成しました。"
-    #   else
-    #     redirect_to outfits_path, notice: "作成に失敗しました。"
-      # end
+    elsif params[:commit] == "追加"
+      @mood = Mood.new(mood_params)
+      if @mood.save
+        redirect_to outfits_path, notice: "新しい気分を追加しました。"
+      else
+        redirect_to outfits_path, notice: "追加に失敗しました。"
+      end
     end
   end
 
@@ -55,8 +56,7 @@ class OutfitsController < ApplicationController
   end
 
   def search
-    @outfits = Outfit.search(params[:keyword])
-    # @outfit = Outfit.search(params[:keyword]).first
+    @outfits = Outfit.search(params[:keyword], current_user.id)
     respond_to do |format|
       format.html
       # format.json {render json: @outfits}
@@ -67,5 +67,9 @@ class OutfitsController < ApplicationController
   private
     def outfit_params
       params.require(:outfit).permit(:name, :image, :mood_id).merge(user_id: current_user.id)
+    end
+
+    def mood_params
+      params.require(:mood).permit(:name)
     end
   end

@@ -1,6 +1,9 @@
 class Api::OutfitsController < ApplicationController
+  # def index
+  #   @outfit = Outfit.find((Outfit.where(user_id: current_user.id)).pluck(:id).sample)
+  # end
   def index
-    @outfit = Outfit.find((Outfit.where(user_id: current_user.id)).pluck(:id).sample)
+    @outfit = Outfit.find((Outfit.search(params[:keyword], current_user.id)).pluck(:id).sample)
   end
 end
 

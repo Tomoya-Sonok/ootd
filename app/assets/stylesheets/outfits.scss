@@ -107,12 +107,12 @@
         top: 15%;
         .form-group{
           width: 200px;
-          .tag-add-group{
+          .mood-add-group{
             display: flex;
-            .add-tag-form{
+            .add-mood-form{
               width: 140px;
             }
-            .tag-add{
+            .mood-add{
               width: 60px;
             }
           }
@@ -173,6 +173,12 @@
     }
     #a-outfit:hover{
       opacity: 0.6;
+    }
+    .errMsg{
+      padding-top: 10rem;
+      text-align: center;
+      color: red;
+      font-size: 2rem;
     }
   }
   &__outfit-show{

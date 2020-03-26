@@ -7,9 +7,10 @@
         = form_with(url: search_outfits_path, local: true, method: :get, class: "search-form") do |form|
           .form-group
             = select_tag :mood, options_for_select(@moods.map{|o| [o.name, o.id, {class: 'mood-choice'}]}), {class: 'search-input', id: 'category-form'}
-            -# .tag-add-group
-              -# = form.text_field :tagname, class: 'add-tag-form'
-              -# = form.submit '追加', class: 'tag-add btn btn-success'
+        = form_for @mood, url: outfits_path do |form|
+          .mood-add-group
+            = form.text_field :name, class: 'add-mood-form'
+            = form.submit '追加', class: 'mood-add btn btn-success'
       
       .modal-open.button-2
         今日のコーデを決める！
