@@ -56,9 +56,11 @@ class OutfitsController < ApplicationController
 
   def search
     @outfits = Outfit.search(params[:keyword])
+    # @outfit = Outfit.search(params[:keyword]).first
     respond_to do |format|
       format.html
-      format.json
+      # format.json {render json: @outfits}
+      format.json { render 'search', handlers: 'jbuilder' }
     end
   end
 

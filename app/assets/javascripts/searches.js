@@ -13,6 +13,7 @@ $(function() {
     .done(function(outfits) {
       console.log('success!');
       console.log(outfits);
+      
     })
     .fail(function(){
       console.log('failure!');

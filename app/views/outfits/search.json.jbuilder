@@ -1,5 +1,5 @@
 json.array! @outfits do |outfit|
-  json.id outfgtfit.id
+  json.id outfit.id
   json.name outfit.name
   json.image outfit.image
   json.user_id outfit.user_id

@@ -4,7 +4,6 @@ class Outfit < ApplicationRecord
   belongs_to :user, optional: true
   belongs_to :mood
 
-
   def self.search(search)
     if search != 1 
       Outfit.where(mood_id: search)

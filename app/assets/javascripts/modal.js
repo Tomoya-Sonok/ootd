@@ -18,7 +18,6 @@ $(function(){
       dataType: 'json'
     })
     .done(function(outfit){
-      console.log('非同期通信は成功！')
       $('#modal').empty();
       let html = buildHTML(outfit);
       $('#modal').append(html);
@@ -35,9 +34,9 @@ $(function(){
           <p class="modal-content__modal-message">
             このコーデはいかがでしょうか！<br>お似合いですよ♪
           </p>
-          <a class="modal-close">
+          <span class="modal-close">
             <i class="far fa-window-close">閉じる</i>
-          </a>`
+          </span>`
         return html;
       };
     });
@@ -50,17 +49,15 @@ $(function(){
     $(modal).fadeIn('slow');
     $('.modal-overlay').off().click(function(){
         $(modal).fadeOut('slow');
-        
         $('.modal-overlay').fadeOut('slow',function(){
             $('.modal-overlay').remove();
         });
     });
-    $('.modal-close').off().click(function(){
-        $(modal).fadeOut('slow');
-        $('.modal-overlay').fadeOut('slow',function(){
-            $('.modal-overlay').remove();
-        });
-        return false;
+    $(document).on('click', '.modal-close', function(){
+      $(modal).fadeOut('slow');
+      $('.modal-overlay').fadeOut('slow',function(){
+          $('.modal-overlay').remove();
+      });
     });
   });
 });
