@@ -7,8 +7,6 @@ $(function() {
     let html = `<a href="/outfits/${outfit.id}" data-method="get">
                   <div class="col-md-4 cp_tooltiptext" id="a-outfit" data-tooltip="${outfit.name}">
                     <img src="${outfit.image}" id="outfit-image">
-                    <div id="outfit-mood">${outfit.moodName}</div>
-                    <div id="outfit-name">${outfit.name}</div>
                   </div>
                 </a>`
     selected_list.append(html);
