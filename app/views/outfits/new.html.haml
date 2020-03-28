@@ -32,7 +32,7 @@
             .col-md
               .form-group.mood-form
                 = f.label "ムード", id: 'outfit-mood' do
-                  = f.select :mood_id, options_for_select(@moods.map{|o| [o.name, o.id]}, prompt: "指定なし"), {}, {class: 'form-control', id: 'mood-form'}
+                  = f.select :mood_id, options_for_select(@moods.map{|o| [o.name, o.id]}, include_blank: "登録する気分を選択してください"), {}, {class: 'form-control', id: 'mood-form'}
                   -# = f.select :mood_id, options_for_select(@moods.pluck(:name).uniq.map.with_index(1){|o, index| [o, {'data-tag_id'=>index}]}, Mood.first.name), {}, {class: 'form-control', id: 'category-form'}
                 -# = f.select :mood_id, options_for_select(Mood.all.map{|m| [m.name, m.id, {}]}, {selected: @outfit.mood_id}), {prompt: "指定なし"}, class: "form-control"
                 -# = m.collection_select( :id, Tag.all.pluck(:tagname).uniq.map.with_index(1){|o, index| [o, {'data-tag_id'=>index}]}, :id, Tag.first.tagname)

@@ -1,13 +1,11 @@
 $(function(){
-  $(window).on('resize', function(){
-      modalResize();
-  });
   
   function modalResize(){
       var w = $(window).width();
-      var h = $(window).height();
+      // var h = $(window).height();
       var x = (w - $(modal).outerWidth(true)) / 2;
-      var y = (h - $(modal).outerHeight(true)) / 2;
+      // var y = (h - $(modal).outerHeight(true)) / 2;
+      var y = 120;
   
       $(modal).css({'left': x + 'px','top': y + 'px'});
   };
@@ -43,7 +41,7 @@ $(function(){
       };
     });
   });
-  $('.modal-open').on('click', function(){
+  $(document).on('click', '.modal-open', function(){
     $('body').append('<div class="modal-overlay"></div>');
     $('.modal-overlay').fadeIn('slow');
     const modal = $('#modal');
