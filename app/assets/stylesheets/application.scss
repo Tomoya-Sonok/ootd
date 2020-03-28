@@ -191,9 +191,35 @@ header{
 }
 
 #category-form{
-  width: 72%;
+  width: 100%;
 }
 
+#mood-form{
+  margin-left: 9.7rem;
+}
+
+.cp_tooltiptext {
+	position: relative;
+	cursor: pointer;
+}
+.cp_tooltiptext::before {
+	position: absolute;
+	transition: all 0.3s ease 0s;
+	opacity: 0;
+	top: 20px;/*HOVERのスタート位置*/
+	// left: 0px;
+	display: block;
+	padding: 0.2em 0.5em;
+	content: attr(data-tooltip);
+	white-space: nowrap;
+	color: #ffffff;
+	border-radius: 6px;
+	background: #1b2538;
+}
+.cp_tooltiptext:hover::before {
+	top: -20px;/*HOVER位置*/
+	opacity: 1;
+}
 
 footer{
   height: 70px;

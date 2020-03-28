@@ -2,9 +2,9 @@
   .main__upper
     .container
       = link_to outfits_path, class: 'backward col-md-1' do
-        .back-icon
+        %span.back-icon
           = icon('fa fa-2x','angle-double-left')
-        .backward-btn
+        %span.backward-btn
           戻る
       .main__upper__title
         コーデの追加
@@ -30,9 +30,9 @@
                 = f.text_field :name, class: 'form_control'
           .row
             .col-md
-              .form-group
+              .form-group.mood-form
                 = f.label "ムード", id: 'outfit-mood' do
-                  = f.select :mood_id, options_for_select(@moods.map{|o| [o.name, o.id]}, Mood.first.name), {}, {class: 'form-control', id: 'category-form'}
+                  = f.select :mood_id, options_for_select(@moods.map{|o| [o.name, o.id]}, prompt: "指定なし"), {}, {class: 'form-control', id: 'mood-form'}
                   -# = f.select :mood_id, options_for_select(@moods.pluck(:name).uniq.map.with_index(1){|o, index| [o, {'data-tag_id'=>index}]}, Mood.first.name), {}, {class: 'form-control', id: 'category-form'}
                 -# = f.select :mood_id, options_for_select(Mood.all.map{|m| [m.name, m.id, {}]}, {selected: @outfit.mood_id}), {prompt: "指定なし"}, class: "form-control"
                 -# = m.collection_select( :id, Tag.all.pluck(:tagname).uniq.map.with_index(1){|o, index| [o, {'data-tag_id'=>index}]}, :id, Tag.first.tagname)

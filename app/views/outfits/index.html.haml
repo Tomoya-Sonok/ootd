@@ -9,7 +9,7 @@
             = select_tag :mood, options_for_select(@moods.map{|o| [o.name, o.id, {class: 'mood-choice'}]}), {class: 'search-input', id: 'category-form'}
         = form_for @mood, url: outfits_path do |form|
           .mood-add-group
-            = form.text_field :name, class: 'add-mood-form'
+            = form.text_field :name, placeholder: "例) オシャレしたい", class: 'add-mood-form'
             = form.submit '追加', class: 'mood-add btn btn-success'
       
       .modal-open.button-2
@@ -24,20 +24,5 @@
       #outfit-list
         - @outfits.each do |outfit|
           = link_to outfit_path(outfit) do
-            .col-md-4#a-outfit
+            .col-md-4#a-outfit.cp_tooltiptext{data: {tooltip: "#{outfit.name}"}}
               = image_tag outfit.image.to_s, id: "outfit-image"
-              #outfit-mood
-                = outfit.mood.name
-              #outfit-name
-                = outfit.name
-      -# #selected-list
-      -#   - @outfitsSelected.each do |outfit|
-      -#     = link_to outfit_path(outfit) do
-      -#       .col-md-4#a-outfit
-      -#         = image_tag outfit.image.to_s, id: "outfit-image"
-      -#         #outfit-mood
-      -#           = outfit.mood.name
-      -#         #outfit-name
-      -#           = outfit.name
--# jQueryで、カテゴリーが選択された時には、そのカテゴリーのコーデリスト
--# だけを表示できるようにする。その際は、上記の#outfit-listはdisabledにする

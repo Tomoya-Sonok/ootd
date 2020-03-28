@@ -24,7 +24,6 @@
                   右のボタンを押すとリセット
                   %label#add-outfit
                     = link_to icon('fa fa-2x','undo-alt'), edit_outfit_path
-
           .row
             .col-md
               .form-group
@@ -34,10 +33,7 @@
             .col-md
               .form-group
                 = f.label "ムード", id: 'outfit-mood' do
-                  = f.select :mood_id, options_for_select(@moods.map{|o| [o.name, o.id]}, @mood.name), {}, {class: 'form-control', id: 'category-form'}
-                -# = f.fields_for @mood do |m|
-                -#   = m.label "ムード", id: 'outfit-mood'
-                -#   = m.select :name, options_for_select(Mood.all.pluck(:name).uniq.map.with_index(1){|o, index| [o, {'data-mood_id'=>index}]}, @mood.name), {}, {class: 'form-control', id: 'category-form'}
+                  = f.select :mood_id, options_for_select(@moods.map{|o| [o.name, o.id]}, {selected: @mood.id}), {}, {class: 'form-control', id: 'mood-form'}
           .row
             .col-md
               .form-group

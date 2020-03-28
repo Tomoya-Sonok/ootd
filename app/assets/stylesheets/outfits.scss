@@ -105,16 +105,19 @@
         position: absolute;
         right: 15%;
         top: 15%;
-        .form-group{
-          width: 200px;
-          .mood-add-group{
-            display: flex;
-            .add-mood-form{
-              width: 140px;
-            }
-            .mood-add{
-              width: 60px;
-            }
+        .search-form{
+          .form-group{
+            width: 208px;
+          }
+        }
+        .mood-add-group{
+          display: flex;
+          .add-mood-form{
+            width: 140px;
+          }
+          .mood-add{
+            width: 60px;
+            margin-left: 8px;
           }
         }
       }
@@ -127,7 +130,7 @@
   flex-grow: 1;
   &__title{
     font-size: 30px;
-    padding-bottom: 20px;
+    padding-bottom: 56px;
     padding-top: 32px;
     position: relative;
     .add-path{
@@ -153,26 +156,24 @@
   #outfit-list{
     margin: 0 auto;
     width: 98%;
+    display: inline-block;
     #a-outfit{
       height: 450px;
       width: 345px;
       padding: 20px;
       margin: 0px;
       display: inline-block;
-      border: 1px solid;
-    #outfit-image{
-      height: 370px;
-      width: 300px;
-    }
-    #outfit-mood{
-      margin-top: 5px;
-    }
-    #outfit-name{
-      margin-top: 5px;
-    }
+      transition: all .3s;
+      box-sizing: border-box;
+      #outfit-image{
+        height: 370px;
+        width: 300px;
+      }
     }
     #a-outfit:hover{
       opacity: 0.6;
+      transform: scale(1.1);
+      transition-duration: 0.3s;
     }
     .errMsg{
       padding-top: 10rem;
