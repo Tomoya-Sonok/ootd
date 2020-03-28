@@ -21,17 +21,17 @@ User.create!(
 
 Mood.create!(
   [
-    # {
-    #   name: '今の気分を選択してください'
-    # },
     {
-      name: '明るい、楽しい'
+      name: '今の気分を選択してください'
     },
     {
       name: '綺麗めシンプル'
     },
     {
-      name: 'おしゃれしたい'
+      name: 'ゆったりリラックス'
+    },
+    {
+      name: '派手にキメたい'
     },
   ]
 )
@@ -42,25 +42,25 @@ Outfit.create!(
       name: 'コートが主役コーデ',
       image: File.open('app/assets/images/masashi1.jpg'),
       user_id: 1,
-      mood_id: 1,
+      mood_id: 2,
     },
     {
       name: 'シンプルコーデ',
       image: File.open('app/assets/images/masashi2.jpg'),
       user_id: 1,
-      mood_id: 3,
+      mood_id: 2,
     },
     {
       name: 'お洒落タックインコーデ',
       image: File.open('app/assets/images/masashi3.jpg'),
       user_id: 1,
-      mood_id: 2,
+      mood_id: 4,
     },
     {
       name: 'シックなコーデ',
       image: File.open('app/assets/images/masashi4.jpg'),
       user_id: 1,
-      mood_id: 1,
+      mood_id: 4,
     },
     {
       name: '重厚なコートコーデ',
@@ -78,31 +78,31 @@ Outfit.create!(
       name: '爽やか夏コーデ',
       image: File.open('app/assets/images/masashi7.jpg'),
       user_id: 1,
-      mood_id: 1,
+      mood_id: 2,
     },
     {
       name: '可愛いTシャツコーデ',
       image: File.open('app/assets/images/masashi8.jpg'),
       user_id: 1,
-      mood_id: 2,
+      mood_id: 3,
     },
     {
       name: 'シンプルイズザベスト',
       image: File.open('app/assets/images/masashi9.jpg'),
       user_id: 1,
-      mood_id: 3,
+      mood_id: 2,
     },
     {
       name: '可愛い鞄と伊達メガネコーデ',
       image: File.open('app/assets/images/masashi10.jpg'),
       user_id: 1,
-      mood_id: 1,
+      mood_id: 4,
     },
     {
       name: '暗色系コーデ',
       image: File.open('app/assets/images/masashi11.jpg'),
       user_id: 1,
-      mood_id: 2,
+      mood_id: 3,
     },
   ]
 )
