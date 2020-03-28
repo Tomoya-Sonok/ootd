@@ -29,11 +29,14 @@
   flex-grow: 1;
   &__upper{
     background-color: whitesmoke;
-    &__title{
+    .main__upper__title{
+      border-bottom: 1px solid #000;
       font-size: 30px;
-      padding-left: 50px;
-      padding-bottom: 20px;
+      margin-top: 16px;
+      padding-bottom: 24px;
       padding-top: 32px;
+      padding-left: 15px;
+      position: relative;
     }
     &__cover{
       height: 700px;
@@ -128,10 +131,13 @@
 .main__lower{
   background-color: white;
   flex-grow: 1;
-  &__title{
+  .main__lower__title{
+    border-bottom: 1px solid #000;
     font-size: 30px;
-    padding-bottom: 56px;
+    margin-top: 16px;
+    padding-bottom: 24px;
     padding-top: 32px;
+    padding-left: 15px;
     position: relative;
     .add-path{
       color: #2ecf2e;
@@ -154,7 +160,7 @@
     }
   }
   #outfit-list{
-    margin: 0 auto;
+    margin: 2rem auto;
     width: 98%;
     display: inline-block;
     #a-outfit{
@@ -184,31 +190,57 @@
   }
   &__outfit-show{
     width: 100%;
-    padding-left: 360px;
-    #show-image{
-      margin: 0 auto;
-    }
-    #show-mood{
-      margin-top: 15px;
-      display: block;
-      #show-mood-content{
-        padding-right: 20px;
-        padding-left: 110px;
-        display: inline;
+    padding-left: 395px;
+    #a-outfit-content{
+      height: 450px;
+      width: 345px;
+      padding: 20px;
+      margin-bottom: 24px;
+      #show-image{
+        margin: 0 auto;
+        height: 370px;
+        width: 300px;
       }
-    }
-    #show-name{
-      margin-top: 15px;
-      display: block;
-      #show-name-content{
-        padding-right: 20px;
-        padding-left: 110px;
-        display: inline;
+      #show-mood{
+        margin-top: 15px;
+        text-align: right;
+        display: block;
+        #show-mood-content{
+          padding-right: 8px;
+          display: inline;
+        }
+      }
+      #show-name{
+        margin-top: 15px;
+        text-align: right;
+        display: block;
+        #show-name-content{
+          padding-right: 8px;
+          display: inline;
+        }
       }
     }
     #btns{
-      margin-left: 225px;
+      margin-left: 152px;
       margin-top: 20px;
     }
   }
+}
+.main__upper__title:before{
+  content: "";
+  background: #3F7942;
+  height: 42px;
+  width: 10px;
+  left: 0;
+  position: absolute;
+  top: 32px;
+}
+.main__lower__title:before{
+  content: "";
+  background: #3F7942;
+  height: 42px;
+  width: 10px;
+  left: 0;
+  position: absolute;
+  top: 32px;
 }

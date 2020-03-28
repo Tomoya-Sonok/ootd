@@ -8,15 +8,16 @@
     .main__lower__title
       コーデの詳細
     .main__lower__outfit-show
-      = image_tag @outfit.image.to_s, alt: '画像を表示できませんでした', height: '400px', width: '400px', id: 'show-image'
-      %label#show-mood
-        #show-mood-content
-          ムード:
-        = @outfit.mood.name
-      %label#show-name
-        #show-name-content
-          コーデ名:
-        = @outfit.name
+      #a-outfit-content
+        = image_tag @outfit.image.to_s, alt: '画像を表示できませんでした', height: '400px', width: '400px', id: 'show-image'
+        %label#show-mood
+          #show-mood-content
+            ムード:
+          = @outfit.mood.name
+        %label#show-name
+          #show-name-content
+            コーデ名:
+          = @outfit.name
       #btns
         .btn.btn-warning
           = link_to '編集する', edit_outfit_path(@outfit), method: :get
