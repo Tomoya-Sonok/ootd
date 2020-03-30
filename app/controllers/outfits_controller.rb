@@ -29,8 +29,6 @@ class OutfitsController < ApplicationController
       @outfit = Outfit.new(outfit_params)
       if @outfit.save
         redirect_to outfits_path, notice: "新しいコーデを作成しました。"
-      elsif @outfit.mood.id == 1
-        redirect_to new_outfit_path, notice: "気分を選択してください"
       else
         redirect_to new_outfit_path, notice: "作成に失敗しました。"
       end

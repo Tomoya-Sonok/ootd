@@ -14,6 +14,8 @@ module Ootd
     # 日本語のメッセージを変更したければconfig/locales/devise.views.ja.ymlを編集
     config.autoload_paths += Dir[Rails.root.join('app', 'uploaders')]
     config.assets.unknown_asset_fallback = true
+
+    config.time_zone = 'Asia/Tokyo'
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
