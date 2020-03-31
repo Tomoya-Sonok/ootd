@@ -44,6 +44,5 @@
           = f.password_field :password_confirmation, autocomplete: "new-password"
       #new_user__btns 
         = f.submit "アカウント作成", class:"btn btn-success"
-        .btn.btn-primary
-          = render "devise/shared/links"
-        = link_to 'Googleで登録', user_google_oauth2_omniauth_authorize_path, method: :post
+        = link_to "ログイン", new_session_path(resource_name), class: "btn btn-primary"
+        = link_to 'Googleで登録', user_google_oauth2_omniauth_authorize_path, method: :post, class: "btn btn-warning"
