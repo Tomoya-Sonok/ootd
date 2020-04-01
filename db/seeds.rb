@@ -10,7 +10,8 @@
 User.create!(
   [
     {
-      username: 'テストくん',
+      username: "テストくん",
+      email: "testkun@test.com"
       gender: 0,
       age: 22,
       password: "testuser",
