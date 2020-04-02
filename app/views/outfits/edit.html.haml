@@ -33,7 +33,7 @@
             .col-md
               .form-group
                 = f.label "ムード", id: 'outfit-mood' do
-                  = f.select :mood_id, options_for_select(@moods.map{|o| [o.name, o.id]}, {selected: @mood.id}), {}, {class: 'form-control', id: 'mood-form'}
+                  = f.select :mood_id, options_for_select(@moods.pluck(:name).uniq.map.with_index(1){|o, index| [o, index]}, {selected: @mood.id}), {}, {class: 'form-control', id: 'mood-form'}
           .row
             .col-md
               .form-group

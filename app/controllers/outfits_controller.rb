@@ -2,11 +2,9 @@ class OutfitsController < ApplicationController
   before_action :authenticate_user!
   
   def index
-    # @outfit = Outfit.find(Outfit.pluck(:id).sample)
-    @outfits = current_user.outfits
-    @moods = Mood.all
+    @outfits = Outfit.where(user_id: current_user.id)
+    @moods = Mood.where(user_id: current_user.id)
     @mood = Mood.new
-    # @outfitsSelected = Outfit.where(mood_id: [?????], user_id: current_user.id).order(created_at: :desc)
   end
 
   def new
@@ -58,7 +56,6 @@ class OutfitsController < ApplicationController
     @outfits = Outfit.search(params[:keyword], current_user.id)
     respond_to do |format|
       format.html
-      # format.json {render json: @outfits}
       format.json { render 'search', handlers: 'jbuilder' }
     end
   end
@@ -69,6 +66,6 @@ class OutfitsController < ApplicationController
     end
 
     def mood_params
-      params.require(:mood).permit(:name)
+      params.require(:mood).permit(:name).merge(user_id: current_user.id)
     end
   end

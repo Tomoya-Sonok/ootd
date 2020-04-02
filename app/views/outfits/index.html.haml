@@ -4,7 +4,8 @@
       .main__upper__actions__category
         = form_with(url: search_outfits_path, local: true, method: :get, class: "search-form") do |form|
           .form-group
-            = select_tag :mood, options_for_select(@moods.map{|o| [o.name, o.id]}), {include_blank: "今の気分を選択してください", class: 'search-input', id: 'category-form'}
+            -# = select_tag :mood, options_for_select(@moods.map{|o| [o.name, o.id]}), {include_blank: "今の気分を選択してください", class: 'search-input', id: 'category-form'}
+            = select_tag :mood, options_for_select(@moods.pluck(:name).uniq.map.with_index(1){|o, index| [o, index]}), {include_blank: "今の気分を選択してください", class: 'search-input', id: 'category-form'}
         = form_for @mood, url: outfits_path do |form|
           .mood-add-group
             = form.text_field :name, placeholder: "例) オシャレしたい", class: 'add-mood-form'
