@@ -8,6 +8,7 @@ class User < ApplicationRecord
 
 
   has_many :outfits
+  has_many :moods
   has_many :sns_credentials
   
   # Include default devise modules. Others available are:

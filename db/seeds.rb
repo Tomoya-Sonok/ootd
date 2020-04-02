@@ -22,17 +22,17 @@ User.create!(
 
 Mood.create!(
   [
-    # {
-    #   name: '今の気分を選択してください'
-    # },
     {
-      name: '綺麗めシンプル'
+      name: '綺麗めシンプル',
+      user_id: 1,
     },
     {
-      name: 'ゆったりリラックス'
+      name: 'ゆったりリラックス',
+      user_id: 1,
     },
     {
-      name: '派手にキメたい'
+      name: '派手にキメたい',
+      user_id: 1,
     },
   ]
 )
