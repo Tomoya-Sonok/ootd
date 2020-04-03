@@ -39,15 +39,15 @@
         %p.alert
           = alert
       .content
-        .header
+        .helmet
           - if current_user
-            .header__profile
+            -# = image_tag asset_path("ootd-background.jpg", alt: "header-image", width: "300px", height: "300px", backgroundSize: "contain", zIndex: "0.3"), id: "header-image"
+            .helmet__profile
               - if current_user.image.present?
-                = image_tag current_user.image.url, class: "header__profile__user-image"
+                = image_tag current_user.image.url, class: "helmet__profile__user-image"
               - else
-                -# = image_tag "default.jpg", class: "header__profile__user-image"
-                = image_tag "default.jpg", class: "header__profile__user-image"
-              .header__profile__user-name
+                = image_tag "default.jpg", class: "helmet__profile__user-image"
+              .helmet__profile__user-name
                 = current_user.username
         = yield
     %footer
