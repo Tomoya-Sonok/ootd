@@ -6,11 +6,11 @@
  
 # DEMO
  
-[![Image from Gyazo](https://i.gyazo.com/bb039e56a8baf1e280aea27122605030.gif)](https://gyazo.com/bb039e56a8baf1e280aea27122605030)
+![ootd1](https://user-images.githubusercontent.com/50537591/78321581-5daf9e00-75a7-11ea-8a80-c1793af72a3b.gif)
  
-[![Image from Gyazo](https://i.gyazo.com/8bc51202ab2ed50133b410e76d228526.gif)](https://gyazo.com/8bc51202ab2ed50133b410e76d228526)
+![ootd2](https://user-images.githubusercontent.com/50537591/78321637-859f0180-75a7-11ea-9463-1d4752e22100.gif)
 
-[![Image from Gyazo](https://i.gyazo.com/194cefd4f8729cb2cd73bf61b17029c9.gif)](https://gyazo.com/194cefd4f8729cb2cd73bf61b17029c9)
+![ootd3](https://user-images.githubusercontent.com/50537591/78321717-b67f3680-75a7-11ea-9752-de0606dcb795.gif)
 
 # Features
  
