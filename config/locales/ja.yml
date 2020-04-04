@@ -35,6 +35,12 @@ ja:
       models:
         user:
           attributes:
+            username:
+              taken: "は既に使用されています。"
+              blank: "が入力されていません。"
+              too_short: "は%{count}文字以上に設定して下さい。"
+              too_long: "は%{count}文字以下に設定して下さい。"
+              invalid: "は有効でありません。"
             email:
               taken: "は既に使用されています。"
               blank: "が入力されていません。"
@@ -62,16 +68,33 @@ ja:
               too_long: "は%{count}文字以下に設定して下さい。"
               invalid: "は有効でありません。"
               confirmation: "が内容とあっていません。"
+        outfit:
+          attributes:
+            name:
+              blank: "が入力されていません。"
+            image:
+              blank: "が入力されていません。"
+        mood:
+          attributes:
+            name:
+              blank: "が入力されていません。"
     attributes:
       user:
         current_password: "現在のパスワード"
-        name: 名前
+        username: "名前"
         email: "メールアドレス"
         password: "パスワード"
         password_confirmation: "確認用パスワード"
         remember_me: "次回から自動的にログイン"
+      outfit:
+        name: "コーデ名"
+        image: "コーデ写真"
+      mood:
+        name: "今の気分"
     models:
-      user: "ユーザ"
+      user: "ユーザー"
+      outfit: "コーデ"
+      mood: "気分"
   devise:
     confirmations:
       new:
