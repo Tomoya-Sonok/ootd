@@ -12,7 +12,7 @@
     #modal.modal-content
     .wrapper
       %header
-        .header-inner
+        .header-inner#header-inner
           .logo
             = link_to outfits_path do
               %i.fas.fa-tshirt.app-name OOTD
@@ -25,7 +25,7 @@
                     %label.menu3-1{:for => "menu3"}
                     %label.menu3-2{:for => "menu3"}
                     %label.menu3-3{:for => "menu3"}
-                  .header-dropdown.absolute
+                  #header-dropdown.header-dropdown.absolute
                     .btm-border
                       = link_to "Home", outfits_path, class: 'one-line dropdown-wrap'
                     %div
