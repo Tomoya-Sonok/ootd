@@ -21,6 +21,9 @@
 @import "outfits";
 @import "users";
 
+html{
+  scroll-behavior: smooth;
+}
 
 .wrapper{
   display: flex;

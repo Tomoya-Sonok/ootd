@@ -1,5 +1,5 @@
 class OutfitsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate
   
   def index
     @outfits = Outfit.where(user_id: current_user.id)
@@ -67,5 +67,9 @@ class OutfitsController < ApplicationController
 
     def mood_params
       params.require(:mood).permit(:name).merge(user_id: current_user.id)
+    end
+
+    def authenticate
+      redirect_to new_user_registration_url unless user_signed_in?
     end
   end
