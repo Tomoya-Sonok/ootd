@@ -1,47 +1,157 @@
-.container
-  .col-md-8
-    .message-box
-      %h1.message
-        「毎日の服選びが面倒なあなたに。」
-  .col-md-4
-    %h2.title 新規登録
-    = form_for(resource, class: "form-group", as: resource_name, url: registration_path(resource_name)) do |f|
+/ main
+%section.main
+  .inner
+    %h1 『毎日の服選びが面倒なあなたに。』
+    %p
+      毎朝の意思決定を減らし
+      %br.sp-br
+      ストレスフリーな生活への第一歩
+      %br.sp-br/
+    %p -ネット上のあなた専用のクローゼット-
+
+-# LP用haml
+
+/ feartures
+%section.features
+  .inner
+    %h2.section-ttl.effect-fade
+      %span>
+        %i.fas.fa-lightbulb
+      Features
+    %p.section-summary.effect-fade -アプリの特徴-
+    %p.effect-fade
+      自分が撮ったコーデ写真の投稿・確認・編集・削除が可能。
+      %br.pc-br
+      ボタン１つでランダム表示して、毎日の服選びを簡単にしてくれるアプリ。
+      %br.pc-br
+      カテゴリー別表示で、その日の気分ごとにコーデ一覧を視覚的に整理できるので、
+      %br.pc-br
+      意思決定をよりスピーディーにしてくれる。
+/ gallary
+%section.gallary.effect-fade
+  .inner
+    %h2.section-ttl.effect-fade
+      %span>
+        %i.fas.fa-camera
+      Gallary
+    %p.section-summary.effect-fade -実際のアプリ内画面です-
+    .gallary-box
+      .inner.gallary_inner
+        .gallary-item.effect-fade
+          = image_tag asset_path('gallary-1.png', alt: 'ギャラリー写真1')
+          .js-accordion
+            .content
+              %p
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Dolore illum incidunt dignissimos tenetur praesentium
+                quibusdam sequi consequuntur, distinctio dolor molestiae
+                debitis numquam placeat suscipit alias quasi perferendis nam
+                veritatis culpa?
+        .gallary-item.effect-fade
+          = image_tag asset_path('gallary-2.png', alt: 'ギャラリー写真1')
+          .js-accordion
+            .content
+              %p
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Dolore illum incidunt dignissimos tenetur praesentium
+                quibusdam sequi consequuntur, distinctio dolor molestiae
+                debitis numquam placeat suscipit alias quasi perferendis nam
+                veritatis culpa?
+        .gallary-item.effect-fade
+          = image_tag asset_path('gallary-3.png', alt: 'ギャラリー写真1')
+          .js-accordion
+            .content
+              %p
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Dolore illum incidunt dignissimos tenetur praesentium
+                quibusdam sequi consequuntur, distinctio dolor molestiae
+                debitis numquam placeat suscipit alias quasi perferendis nam
+                veritatis culpa?
+        .gallary-item.effect-fade
+          = image_tag asset_path('gallary-4.png', alt: 'ギャラリー写真1')
+          .js-accordion
+            .content
+              %p
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Dolore illum incidunt dignissimos tenetur praesentium
+                quibusdam sequi consequuntur, distinctio dolor molestiae
+                debitis numquam placeat suscipit alias quasi perferendis nam
+                veritatis culpa?
+/ how to
+%section.howTo.effect-fade
+  .inner
+    %h2.section-ttl.effect-fade
+      %span>
+        %i.fas.fa-spinner
+      How To Use
+    %p.section-summary.effect-fade -使い方-
+    .step.effect-fade
+      .stepBox
+        .inner.stepBox_inner.effect-fade
+          %h3 STEP 1
+          %span.step-ttl.effect-fade まずは新規登録から
+          .step-flex
+            .icon
+              %i.fas.fa-user-plus
+            %div
+              %p.step-p.effect-fade
+                アカウント名やパスワードを設定して自分のアカウントを作成しよう。
+        .inner.stepBox_inner.effect-fade
+          %h3 STEP 2
+          %span.step-ttl.step2-ttl.effect-fade お気に入りのコーデをアップしよう！
+          #step-flex_sp-margin.step-flex
+            .icon
+              %i.fas.fa-upload
+            %div
+              %p.step-p.effect-fade
+                毎日アップして自分だけの専用クローゼットに！気分別にタグ付けしてカテゴライズできます。
+        .inner.stepBox_inner.effect-fade
+          %h3 STEP 3
+          %span.step-ttl.effect-fade OOTDが選びます！
+          .step-flex
+            .icon
+              %i.fas.fa-person-booth
+            %div
+              %p.step-p.effect-fade
+                朝の気分を選択して「今日のコーデを決める！」ボタンを押すだけで服装を選んでくれます。
+/ signup
+%section#signup-form.signup.effect-fade
+  .login-form
+    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      %h2.section-ttl
+        %span
+        %i.fas.fa-sign-in-alt
+        Sign in
       = render "devise/shared/error_messages", resource: resource
-      #new_user__field-content
-        = f.label :username
-        %br/
+      .txtb
         = f.text_field :username
-      #new_user__field-content
-        = f.label :email
-        %br/
+        %span{"data-placeholder" => "Username"}
+      .txtb
         = f.email_field :email, autofocus: true, autocomplete: "email"
-      #new_user__field-content
-        = f.label '年齢'
-        %br/
+        %span{"data-placeholder" => "Email"}
+      .txtb
         = f.text_field :age
-      #new_user__field-content
-        = f.label '性別'
-        %br/
-        = f.label '男性'
-        = f.radio_button :gender, :man
-        = f.label '女性'
-        = f.radio_button :gender, :woman
-        = f.label '回答しない'
-        = f.radio_button :gender, :neutral
+        %span{"data-placeholder" => "Age"}
+      .txtb
+        = f.radio_button :gender, :man, class: 'default-radio radio-inline__input', id: "item-1"
+        = f.label '男性', class: 'radio-inline__label', for: "item-1"
+        = f.radio_button :gender, :woman, class: 'default-radio radio-inline__input', id: "item-2"
+        = f.label '女性', class: 'radio-inline__label', for: "item-2"
+        = f.radio_button :gender, :neutral, class: 'default-radio radio-inline__input', id: "item-3"
+        = f.label '回答しない', class: 'radio-inline__label', for: "item-3"
+        %span{"data-placeholder" => "Gender"}
       - if @sns_id.present?
         = hidden_field_tag :sns_auth, true
       - else
-        #new_user__field-content
-          = f.label :password
-          - if @minimum_password_length
-            %em
-              (#{@minimum_password_length}文字以上)
-          %br/
+        .txtb
+          -# - if @minimum_password_length
+          -#   %em
+          -#     (#{@minimum_password_length}文字以上)
           = f.password_field :password, autocomplete: "new-password"
-        #new_user__field-content
-          = f.label :password_confirmation
-          %br/
+          %span{"data-placeholder" => "Password　(6文字以上)"}
+        .txtb
           = f.password_field :password_confirmation, autocomplete: "new-password"
+          %span{"data-placeholder" => "Password confirmation"}
       #new_user__btns 
         = f.submit "アカウント作成", class:"btn btn-success"
         = link_to "ログイン", new_session_path(resource_name), class: "btn btn-primary"

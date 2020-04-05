@@ -12,10 +12,18 @@
     #modal.modal-content
     .wrapper
       %header
-        .header-inner#header-inner
-          .logo
-            = link_to outfits_path do
-              %i.fas.fa-tshirt.app-name OOTD
+        .inner.header_inner.header-inner
+          .header_left
+            = image_tag asset_path('ootd-logo_new.jpg', alt: 'ロゴ'), class: 'header-logo'
+            %p.site-ttl
+              O
+              %span> utfit
+              O
+              %span> f
+              T
+              %span> he
+              D
+              %span> ay
           - if user_signed_in?
             .header-wrap
               %ul.header-nav.relative
@@ -32,6 +40,30 @@
                       = link_to "Edit", edit_user_registration_path, class: 'dropdown-wrap'
                     %div
                       = link_to "Log out", users_sign_out_path, method: :delete, class: 'dropdown-wrap'
+          - else
+            .header_right
+              = link_to '今すぐOOTDを使う', '/'
+      -# %header
+      -#   .header-inner#header-inner
+      -#     .logo
+      -#       = link_to outfits_path do
+      -#         %i.fas.fa-tshirt.app-name OOTD
+          -# - if user_signed_in?
+          -#   .header-wrap
+          -#     %ul.header-nav.relative
+          -#       %div
+          -#         %label.menu3#menu-btn
+          -#           %input#menu3{:type => "checkbox", :value => "off"}/
+          -#           %label.menu3-1{:for => "menu3"}
+          -#           %label.menu3-2{:for => "menu3"}
+          -#           %label.menu3-3{:for => "menu3"}
+          -#         #header-dropdown.header-dropdown.absolute
+          -#           .btm-border
+          -#             = link_to "Home", outfits_path, class: 'one-line dropdown-wrap'
+          -#           %div
+          -#             = link_to "Edit", edit_user_registration_path, class: 'dropdown-wrap'
+          -#           %div
+          -#             = link_to "Log out", users_sign_out_path, method: :delete, class: 'dropdown-wrap'
       - if notice
         %p.notice
           = notice
@@ -41,7 +73,6 @@
       .content
         .helmet
           - if current_user
-            -# = image_tag asset_path("ootd-background.jpg", alt: "header-image", width: "300px", height: "300px", backgroundSize: "contain", zIndex: "0.3"), id: "header-image"
             .helmet__profile
               - if current_user.image.present?
                 = image_tag current_user.image.url, class: "helmet__profile__user-image"
@@ -51,5 +82,8 @@
                 = current_user.username
         = yield
     %footer
-      .content
-        ©︎ 2020 OOTD by Tomoya Sonokui
+      .inner
+        .footer-logo
+          = image_tag asset_path('ootd-logo2_new.jpg', alt: 'フッターロゴ')
+          %span Outfit Of The Day
+        %p © 00TD by Tomoya Sonokui 2020 All Rights Reserved.

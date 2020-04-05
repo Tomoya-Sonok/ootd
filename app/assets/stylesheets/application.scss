@@ -16,6 +16,7 @@
 @import 'font-awesome';
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "LPstyles";
 @import "outfits";
 @import "users";
 
@@ -98,8 +99,8 @@
 }
 
 body{
-  background-image: image-url("test-background.jpg");
-  background-size: cover;
+  // background-image: image-url("test-background.jpg");
+  // background-size: cover;
 }
 
 a{
@@ -155,7 +156,7 @@ header{
       width: 40px;
       height: 4px;
       margin: 4px 0;
-      background-color: #333;
+      background-color: whitesmoke;
       border-radius: 4px;
       transition: all 0.4s;
     }
