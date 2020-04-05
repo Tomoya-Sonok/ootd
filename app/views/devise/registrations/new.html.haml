@@ -35,9 +35,9 @@
         %i.fas.fa-camera
       Gallary
     %p.section-summary.effect-fade -実際のアプリ内画面です-
-    .gallary-box
-      .inner.gallary_inner
-        .gallary-item.effect-fade
+    .gallary-box#gallary-box-pc
+      .inner.gallary_inner#gallary_inner-pc
+        .gallary-item.gallary-item-pc.effect-fade
           = image_tag asset_path('gallary-1.png', alt: 'ギャラリー写真1')
           .js-accordion
             .content
@@ -47,7 +47,7 @@
                 quibusdam sequi consequuntur, distinctio dolor molestiae
                 debitis numquam placeat suscipit alias quasi perferendis nam
                 veritatis culpa?
-        .gallary-item.effect-fade
+        .gallary-item.gallary-item-pc.effect-fade
           = image_tag asset_path('gallary-2.png', alt: 'ギャラリー写真1')
           .js-accordion
             .content
@@ -57,7 +57,7 @@
                 quibusdam sequi consequuntur, distinctio dolor molestiae
                 debitis numquam placeat suscipit alias quasi perferendis nam
                 veritatis culpa?
-        .gallary-item.effect-fade
+        .gallary-item.gallary-item-pc.effect-fade
           = image_tag asset_path('gallary-3.png', alt: 'ギャラリー写真1')
           .js-accordion
             .content
@@ -67,7 +67,7 @@
                 quibusdam sequi consequuntur, distinctio dolor molestiae
                 debitis numquam placeat suscipit alias quasi perferendis nam
                 veritatis culpa?
-        .gallary-item.effect-fade
+        .gallary-item.gallary-item-pc.effect-fade
           = image_tag asset_path('gallary-4.png', alt: 'ギャラリー写真1')
           .js-accordion
             .content
