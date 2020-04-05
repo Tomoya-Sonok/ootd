@@ -92,7 +92,7 @@ ja:
       mood:
         name: "今の気分"
     models:
-      user: "ユーザー"
+      user: "ユーザー情報"
       outfit: "コーデ"
       mood: "気分"
   devise:

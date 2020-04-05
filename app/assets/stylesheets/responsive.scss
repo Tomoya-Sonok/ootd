@@ -1,0 +1,251 @@
+// common
+$font-color: #333;
+$basic-color: #3f7942;
+
+@media screen and ( max-width: 768px){
+  .section-ttl {
+    font-size: 22px;
+  }
+
+  // header
+  .header_inner .header_left .site-ttl span {
+    display: none;
+  }
+  #header-inner{
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1024px;
+    height: 60px;
+    padding: 0 0.8em;
+    margin: 0 auto;
+    font-size: 1.2em;
+    #header-dropdown{
+      width: 248px;
+      font-size: 24px;
+      top: 60px;
+      right: 0;
+      display: none;
+      z-index: 998;
+      padding: 0.2em 0;
+      background: #fff;
+      border-radius: 0.5em;
+      box-shadow: 0 0 9px 2px #e0e0e0;
+    }
+  } 
+
+  // main
+  .main{
+    &__upper__actions__category{
+      position: absolute;
+      right: 15%;
+      top: 20%;
+      .search-form .form-group #category-form{
+        font-size: smaller;
+      }
+      .new_mood .mood-add-group .add-mood-form{
+        width: 110px;
+        font-size: smaller;
+      }
+    }
+    &__upper__actions .button-2{
+      display: inline-block;
+      padding: 1rem;
+      font-size: 30px;
+      color: #2ecf2e;
+      text-decoration: none;
+      text-align: center;
+      user-select: none;
+      border: 1px #2ecf2e solid;
+      border-radius: 20px;
+      transition: 0.4s ease;
+      position: absolute;
+      top: 50%;
+      right: 37%;
+      transform: translateY(-50%);
+      width: fit-content;
+      left: 27%;
+    }
+    &__lower .container{
+      padding-left: 8px;
+      padding-top: 50px;
+      padding-bottom: 200px;
+    }
+  }
+  .main .inner h1 {
+    font-size: 22px;
+  }
+  .main .inner p {
+    font-size: 14px;
+  }
+  // gallary
+  .gallary-box-sp .gallary_inner-sp .gallary-item-sp .js-accordion {
+    display: block;
+  }
+  // how to
+  .step .stepBox .stepBox_inner h3 {
+    font-size: 12px;
+  }
+  .step .stepBox .stepBox_inner .step-ttl {
+    line-height: 1.5;
+  }
+
+  .step .stepBox .stepBox_inner .step-ttl {
+    font-size: 12px;
+  }
+  // signup
+  .signup .login-form .sign-up-form .field-span {
+    margin-right: 20px;
+  }
+  .signup .login-form .sign-up-form .txtb input {
+    padding-left: 120px;
+    font-size: 8px;
+  }
+  .signup .login-form .sign-up-form .txtb .min-sp-confirmation-pass {
+    font-size: 6px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  // header
+  header {
+    height: 60px;
+  }
+  header .header_inner .header_left .header-logo {
+    width: 40px;
+    height: 40px;
+  }
+  header .header_inner .header_left .site-ttl {
+    font-size: 40px;
+    margin-left: 20px;
+  }
+  header .header_inner .header_left .site-ttl span {
+    font-size: 20px;
+  }
+  header .header_inner .header_right a {
+    font-size: 20px;
+  }
+  #header-inner{
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1024px;
+    height: 60px;
+    padding: 0 0.8em;
+    margin: 0 auto;
+    font-size: 1.2em;
+    #header-dropdown{
+      width: 248px;
+      font-size: 24px;
+      top: 60px;
+      right: 0;
+      display: none;
+      z-index: 998;
+      padding: 0.2em 0;
+      background: #fff;
+      border-radius: 0.5em;
+      box-shadow: 0 0 9px 2px #e0e0e0;
+    }
+  } 
+
+  // main
+  .main{
+    &__upper__actions__category{
+      position: absolute;
+      right: 15%;
+      top: 20%;
+      .search-form .form-group #category-form{
+        font-size: smaller;
+      }
+      .new_mood .mood-add-group .add-mood-form{
+        width: 110px;
+        font-size: smaller;
+      }
+    }
+    &__upper__actions .button-2{
+      display: inline-block;
+      padding: 1rem;
+      font-size: 30px;
+      color: #2ecf2e;
+      text-decoration: none;
+      text-align: center;
+      user-select: none;
+      border: 1px #2ecf2e solid;
+      border-radius: 20px;
+      transition: 0.4s ease;
+      position: absolute;
+      top: 50%;
+      right: 37%;
+      transform: translateY(-50%);
+      width: fit-content;
+      left: 27%;
+    }
+    &__lower .container{
+      padding-left: 8px;
+      padding-top: 50px;
+      padding-bottom: 200px;
+    }
+  }
+  // features
+  .features p {
+    text-align: center;
+    line-height: 1.5;
+  }
+
+  // gallary
+  #gallary_inner-pc {
+    display: flex;
+    width: 100%;
+  }
+  #gallary-box-pc #gallary_inner-pc .gallary-item-pc {
+    width: 50%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .js-modal {
+    margin-left: 40px;
+  }
+  // how to
+  .stepBox {
+    display: flex;
+    justify-content: space-around;
+  }
+  .stepBox_inner {
+    width: calc(100% / 3);
+    padding: 0 0 10px 0;
+  }
+  .howTo .stepBox_inner h3 {
+    display: block;
+    position: static;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+  .step .stepBox .stepBox_inner .step-ttl {
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+    border: none;
+    text-decoration-line: underline;
+    text-decoration-color: var(--basic-color);
+  }
+  .step .stepBox .stepBox_inner .step-flex {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  #step-flex_sp-margin {
+    margin-top: 40px;
+  }
+  // login-form sign-up-form
+  .login-form .sign-up-form{
+    max-width: 500px;
+  }
+  // common
+  .pc-br {
+    display: block;
+  }
+
+}

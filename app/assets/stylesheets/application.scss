@@ -16,75 +16,11 @@
 @import 'font-awesome';
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "responsive";
+@import "LPstyles";
 @import "outfits";
 @import "users";
 
-@media screen and (min-width: 480px) and ( max-width:1024px){
-  // header
-  #header-inner{
-    height: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 1024px;
-    height: 60px;
-    padding: 0 0.8em;
-    margin: 0 auto;
-    font-size: 1.2em;
-    #header-dropdown{
-      width: 248px;
-      font-size: 24px;
-      top: 60px;
-      right: 0;
-      display: none;
-      z-index: 998;
-      padding: 0.2em 0;
-      background: #fff;
-      border-radius: 0.5em;
-      box-shadow: 0 0 9px 2px #e0e0e0;
-    }
-  } 
-
-  // main
-  .main{
-    &__upper__actions__category{
-      position: absolute;
-      right: 15%;
-      top: 20%;
-      .search-form .form-group #category-form{
-        font-size: smaller;
-      }
-      .new_mood .mood-add-group .add-mood-form{
-        width: 110px;
-        font-size: smaller;
-      }
-    }
-    &__upper__actions .button-2{
-      display: inline-block;
-      padding: 1rem;
-      font-size: 30px;
-      color: #2ecf2e;
-      text-decoration: none;
-      text-align: center;
-      user-select: none;
-      border: 1px #2ecf2e solid;
-      border-radius: 20px;
-      transition: 0.4s ease;
-      position: absolute;
-      top: 50%;
-      right: 37%;
-      transform: translateY(-50%);
-      width: fit-content;
-      left: 27%;
-    }
-    &__lower .container{
-      padding-left: 8px;
-      padding-top: 50px;
-      padding-bottom: 200px;
-    }
-  }
-
-}
 
 .wrapper{
   display: flex;
@@ -97,10 +33,7 @@
   }
 }
 
-body{
-  background-image: image-url("test-background.jpg");
-  background-size: cover;
-}
+
 
 a{
   text-decoration: none;
@@ -155,7 +88,7 @@ header{
       width: 40px;
       height: 4px;
       margin: 4px 0;
-      background-color: #333;
+      background-color: whitesmoke;
       border-radius: 4px;
       transition: all 0.4s;
     }
