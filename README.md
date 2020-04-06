@@ -19,15 +19,32 @@
 # Background
 あまりファッションに興味が無いので、毎日の服選びが苦痛だった。なぜ苦痛なのかを考えた時、「たくさん服の入っているクローゼットから一枚一枚取り出して、組み合わせを考えるのが自分にとって難しいから」だと考え、それならば「服ではなく、コーデ写真が入ったネット上のクローゼットのようなものがあればもっと簡単に選べるはず」と結論づけ、このアプリの開発を開始した。
 
+# Production URL
+[こちら](https://www.ootd.me/)をクリック、または下記のURLへアクセスしてください。
+
+　https://www.ootd.me
+
+ ※デモ用アカウントのログイン情報
+ ```
+ Name: テストくん
+ Password: testuser
+ ```
+
+# Dev Environment
+
+Ruby/Ruby on Rails/MySQL/Github/Visual Studio Code/jQuery/AWS/Nginx/Unicorn
 
 # Note
-データベースはMySQL、インフラはAWS、Nginx、Unicornを使用。
 
 今後実装したい機能は、以下の通り。
 
 - 天気予報APIで毎日の服選びをより正確に
 - カレンダーをアプリ内に設置し、いつどのコーデを着たのか記録できる
  
+ # Versions
+
+Ruby 2.5.1
+Rails 5.2.4.1
  # DB schema
 ## outfitテーブル
 |Column|Type|Options|
@@ -74,9 +91,3 @@ rails db:migrate
 rails db:seed
 rails s
 ```
- 
- デモ用アカウントのログイン情報
- ```
- Name: テストくん
- Password: testuser
- ```
