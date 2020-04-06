@@ -8,6 +8,9 @@ $basic-color: #3f7942;
   }
 
   // header
+  header .header_inner .header_left .site-ttl {
+    margin-top: 10px;
+  }
   .header_inner .header_left .site-ttl span {
     display: none;
   }
@@ -79,6 +82,11 @@ $basic-color: #3f7942;
   .main .inner p {
     font-size: 14px;
   }
+
+  // features
+  .features p .pc-br {
+    display: none;
+  }
   // gallary
   .gallary-box-sp .gallary_inner-sp .gallary-item-sp .js-accordion {
     display: block;
@@ -105,6 +113,14 @@ $basic-color: #3f7942;
   .signup .login-form .sign-up-form .txtb .min-sp-confirmation-pass {
     font-size: 6px;
   }
+
+  .wrapper .content .login-form{
+    margin: 40px auto;
+    position: static;
+  }
+  .main #session-main{
+    margin: 0;
+  }
 }
 
 @media screen and (min-width: 768px) and (max-width: 2600px) {
@@ -119,6 +135,7 @@ $basic-color: #3f7942;
   header .header_inner .header_left .site-ttl {
     font-size: 40px;
     margin-left: 20px;
+    margin: 0;
   }
   header .header_inner .header_left .site-ttl span {
     font-size: 20px;
@@ -150,6 +167,15 @@ $basic-color: #3f7942;
     }
   } 
 
+  @media screen and (max-width: 1024px) {
+    .wrapper .content .login-form{
+      margin: 0;
+      width: 30%;
+    }
+    .main #session-main{
+      width: 45%;
+    }
+  }
   // main
   .main{
     &__upper__actions__category{
@@ -249,11 +275,3 @@ $basic-color: #3f7942;
   }
 
 }
-
-// @media screen and (min-width: 320px) and (max-width: 1024px) {
-//   .main{
-//     #session-main{
-//       margin: 0;
-//     }
-//   }
-// }

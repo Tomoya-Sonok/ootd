@@ -1,6 +1,6 @@
 // common
 $font-color: #333;
-$basic-color: #3f7942;
+$basic-color: #3F7942;
 
 * {
   padding: 0;
@@ -43,7 +43,7 @@ img {
 // header
 header {
   background-color: $basic-color;
-  height: 50px;
+  height: 60px;
   .header_inner {
     display: flex;
     justify-content: space-between;
@@ -61,9 +61,10 @@ header {
       }
 
       .header-logo {
-        width: 30px;
-        height: 30px;
+        width: 40px;
+        height: 40px;
         margin-right: 10px;
+        margin-top: 8px;
       }
     }
     .header_right {
