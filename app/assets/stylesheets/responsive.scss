@@ -178,15 +178,6 @@ $basic-color: #3f7942;
     }
   } 
 
-  @media screen and (max-width: 1024px) {
-    .wrapper .content .login-form{
-      margin: 0;
-      width: 30%;
-    }
-    .main #session-main{
-      width: 45%;
-    }
-  }
   // main
   .main{
     &__upper__actions__category{
@@ -285,5 +276,14 @@ $basic-color: #3f7942;
     display: block;
   }
 
+  @media screen and (max-width: 1024px) {
+    .wrapper .content .login-form{
+      margin: 0;
+      width: 30%;
+    }
+    .main #session-main{
+      width: 45%;
+    }
+  }
 }
 

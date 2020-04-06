@@ -70,6 +70,6 @@ class OutfitsController < ApplicationController
     end
 
     def authenticate
-      redirect_to new_user_registration_url unless user_signed_in?
+      redirect_to new_user_registration_url(anchor: 'LPtop') unless user_signed_in?
     end
   end
