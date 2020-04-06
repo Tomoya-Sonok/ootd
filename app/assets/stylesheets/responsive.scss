@@ -239,6 +239,7 @@ $basic-color: #3f7942;
   // how to
   .stepBox {
     display: flex;
+    margin-bottom: 2rem;
     justify-content: space-around;
   }
   .stepBox_inner {
