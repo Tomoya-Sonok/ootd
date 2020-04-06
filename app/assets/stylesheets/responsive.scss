@@ -70,12 +70,16 @@ $basic-color: #3f7942;
       width: fit-content;
       left: 27%;
     }
-    &__lower .container{
+    .container{
       padding-left: 8px;
       padding-top: 50px;
       padding-bottom: 200px;
     }
+    
   }
+  // .container {
+  //   padding: 0 180px;
+  // }
   .main .inner h1 {
     font-size: 22px;
   }
@@ -117,9 +121,16 @@ $basic-color: #3f7942;
   .wrapper .content .login-form{
     margin: 40px auto;
     position: static;
+    .txtb input{
+      width: 48%;
+      margin-left: 128px;
+    }
   }
   .main #session-main{
     margin: 0;
+  }
+  #outfit-show{
+    padding: 0 40px;
   }
 }
 
@@ -275,3 +286,4 @@ $basic-color: #3f7942;
   }
 
 }
+
