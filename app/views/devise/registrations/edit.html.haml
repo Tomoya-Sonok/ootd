@@ -1,8 +1,4 @@
 .container
-  .col-md-8
-    .message-box
-      %h1.message
-        「毎日の服選びが面倒なあなたに。」
   .col-md-4
     %h2.title アカウントの編集
     = form_for(resource, class: "form-group", as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|

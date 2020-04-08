@@ -42,8 +42,8 @@ $basic-color: #3f7942;
   .main{
     &__upper__actions__category{
       position: absolute;
-      right: 15%;
-      top: 20%;
+      right: 0%;
+      top: 105%;
       .search-form .form-group #category-form{
         font-size: smaller;
       }
@@ -55,7 +55,7 @@ $basic-color: #3f7942;
     &__upper__actions .button-2{
       display: inline-block;
       padding: 1rem;
-      font-size: 30px;
+      font-size: 22px;
       color: #2ecf2e;
       text-decoration: none;
       text-align: center;
@@ -68,13 +68,13 @@ $basic-color: #3f7942;
       right: 37%;
       transform: translateY(-50%);
       width: fit-content;
-      left: 27%;
+      left: 20%;
     }
-    .container{
-      padding-left: 8px;
-      padding-top: 50px;
-      padding-bottom: 200px;
-    }
+    // .container{
+    //   padding-left: 8px;
+    //   padding-top: 50px;
+    //   padding-bottom: 200px;
+    // }
     
   }
   // .container {
@@ -130,7 +130,7 @@ $basic-color: #3f7942;
     margin: 0;
   }
   #outfit-show{
-    padding: 0 40px;
+    padding: 0 24px;
   }
 }
 
@@ -208,7 +208,7 @@ $basic-color: #3f7942;
       right: 37%;
       transform: translateY(-50%);
       width: fit-content;
-      left: 27%;
+      left: 37%;
     }
     &__lower .container{
       padding-left: 8px;

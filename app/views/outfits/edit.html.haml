@@ -10,32 +10,22 @@
         コーデの編集
       .main__upper__cover
         = nested_form_for @outfit do |f|
-          .row
-            #img_field{:onclick => "$('#file').click()"}
-              - if @outfit.image.url.present?
-                = image_tag(@outfit.image.url)
-              - else
-                %i.fas.fa-image
-                %i.fas.fa-file-upload.add
-            = f.file_field :image, class: "image", style: "display:none;", id: "file"
-            .col-md
-              .form-group#flexbox
-                #add-message
-                  右のボタンを押すとリセット
-                  %label#add-outfit
-                    = link_to icon('fa fa-2x','undo-alt'), edit_outfit_path
-          .row
-            .col-md
-              .form-group
-                = f.label "コーデ名", id: 'outfit-name' 
-                = f.text_field :name, class: 'form_control'
-          .row
-            .col-md
-              .form-group
-                = f.label "ムード", id: 'outfit-mood' do
-                  = f.select :mood_id, options_for_select(@moods.pluck(:name).uniq.map.with_index(1){|o, index| [o, index]}, {selected: @mood.id}), {}, {class: 'form-control', id: 'mood-form'}
-          .row
-            .col-md
-              .form-group
-                = f.label "", id: 'add-btn' do
-                  = f.submit '更新する', class: 'btn btn-success'
+          #img_field{:onclick => "$('#file').click()"}
+            - if @outfit.image.url.present?
+              = image_tag(@outfit.image.url)
+            - else
+              %i.fas.fa-image
+              %i.fas.fa-file-upload.add
+          = f.file_field :image, class: "image", style: "display:none;", id: "file"
+          .rw
+            .fg
+              = f.label "コーデ名", id: 'outfit-name' 
+              = f.text_field :name, class: 'fc'
+          .rw
+            .fg
+              = f.label "ムード", id: 'outfit-mood' do
+                = f.select :mood_id, options_for_select(@moods.pluck(:name).uniq.map.with_index(1){|o, index| [o, index]}, {selected: @mood.id}), {}, {class: 'mood-form', id: 'mood-form'}
+          .rw
+            .fg
+              = f.label "", id: 'add-btn' do
+                = f.submit '更新する', class: 'btn btn-success'
