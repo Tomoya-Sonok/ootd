@@ -1,13 +1,14 @@
 $(function(){
   
   function modalResize(){
-      var w = $(window).width();
+      // var w = $(window).width();
       // var h = $(window).height();
-      var x = (w - $(modal).outerWidth(true)) / 2;
+      // var x = (w - $(modal).outerWidth(true)) / 2;
       // var y = (h - $(modal).outerHeight(true)) / 2;
-      var y = 120;
+      var y = 10;
+      var x = 10;
   
-      $(modal).css({'left': x + 'px','top': y + 'px'});
+      $(modal).css({'left': x + '%','top': y + '%', 'right': '10%'});
   };
   $(document).on('click', '.modal-open', function(){
     let input = $(".search-input").val();

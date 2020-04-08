@@ -9,7 +9,7 @@ class OutfitsController < ApplicationController
 
   def new
     @outfit = Outfit.new
-    @moods = Mood.all
+    @moods = Mood.where(user_id: current_user.id)
   end
 
   def show
@@ -18,7 +18,7 @@ class OutfitsController < ApplicationController
 
   def edit
     @outfit = Outfit.find(params[:id])
-    @moods = Mood.all
+    @moods = Mood.where(user_id: current_user.id)
     @mood = Mood.find(@outfit.mood_id)
   end
 
