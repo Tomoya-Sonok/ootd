@@ -56,7 +56,7 @@ server "18.178.222.209",
     user: "ec2-user", # overrides user setting above
     keys: %w(~/.ssh/deploy-test.pem),
     forward_agent: false,
-    auth_methods: %w(publickey password)
+    auth_methods: %w(publickey)
     # password: "please use keys"
   }
 
