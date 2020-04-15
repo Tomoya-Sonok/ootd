@@ -8,7 +8,7 @@ class User < ApplicationRecord
   enum gender: { man: 0, woman: 1, neutral: 2}
 
 
-  has_many :outfits, dependent: destroy
+  has_many :outfits, dependent: delete_all
   has_many :moods, dependent: destroy
   has_many :sns_credentials, dependent: destroy
   
