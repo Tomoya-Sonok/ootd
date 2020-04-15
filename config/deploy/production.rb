@@ -49,11 +49,11 @@
 #
 # The server-based syntax can be used to override options:
 # ------------------------------------
-server "18.178.222.209",
-  user: "ec2-user",
+server '18.178.222.209',
+  user: 'ec2-user',
   roles: %w{app db web},
   ssh_options: {
-    user: "ec2-user", # overrides user setting above
+    user: 'ec2-user', # overrides user setting above
     keys: %w(~/.ssh/deploy-test.pem),
     forward_agent: false,
     auth_methods: %w(publickey)
