@@ -8,9 +8,9 @@ class User < ApplicationRecord
   enum gender: { man: 0, woman: 1, neutral: 2}
 
 
-  has_many :outfits
-  has_many :moods
-  has_many :sns_credentials
+  has_many :outfits, dependent: destroy
+  has_many :moods, dependent: destroy
+  has_many :sns_credentials, dependent: destroy
   
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
