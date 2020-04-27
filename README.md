@@ -37,7 +37,15 @@ https://www.ootd.me
 
 # Dev Environment
 
-Ruby/Ruby on Rails/MySQL/Github/Visual Studio Code/jQuery/AWS/Nginx/Unicorn
+- Ruby
+- Ruby on Rails
+- MySQL
+- Github
+- Visual Studio Code
+- jQuery
+- AWS
+- Nginx
+- Unicorn
 
 # Note
 
